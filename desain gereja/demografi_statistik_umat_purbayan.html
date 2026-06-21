@@ -1,0 +1,476 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+
+  .page { font-family: 'Inter', sans-serif; color: #1e293b; background: #f8fafc; }
+  .serif { font-family: 'Playfair Display', Georgia, serif; }
+  .label-sm { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #2a9bc0; }
+  .text-secondary { color: #64748b; }
+  .chip { display: inline-flex; align-items: center; padding: 6px 16px; border-radius: 999px; font-size: 13px; font-weight: 500; border: 1px solid #cbd5e1; background: #fff; color: #475569; cursor: pointer; transition: all 0.15s; white-space: nowrap; }
+  .chip.active { background: #0b2c3d; color: #fff; border-color: #0b2c3d; }
+  .chip:hover:not(.active) { border-color: #1a6080; color: #1a6080; }
+  .card { background: #fff; border-radius: 12px; border: 1px solid #e2e8f0; }
+  .stat-card { background: #fff; border-radius: 10px; border: 1px solid #e2e8f0; padding: 20px 22px; }
+  .stat-card .val { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 600; color: #0b2c3d; }
+  .stat-card .lbl { font-size: 12px; color: #64748b; margin-top: 2px; }
+  .stat-card .icon-wrap { width: 36px; height: 36px; border-radius: 8px; background: #e8f4f9; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; color: #1a6080; font-size: 18px; }
+  .insight-card { background: #fff; border-radius: 10px; border: 1px solid #e2e8f0; padding: 18px 20px; display: flex; align-items: flex-start; gap: 14px; }
+  .insight-icon { width: 40px; height: 40px; border-radius: 8px; background: #e8f4f9; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #1a6080; font-size: 20px; }
+  .pastoral-card { background: #fff; border-radius: 10px; border-left: 3px solid #1a6080; border-top: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; padding: 18px 20px; }
+  .divider { border: none; border-top: 1px solid #e2e8f0; margin: 0; }
+  .badge { display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 500; }
+  .badge-blue { background: #e0f2fe; color: #0369a1; }
+  .badge-green { background: #dcfce7; color: #166534; }
+  .data-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #f1f5f9; font-size: 13px; }
+  .data-row:last-child { border-bottom: none; }
+  .section-tag { display: inline-block; padding: 3px 10px; background: #e8f4f9; color: #1a6080; border-radius: 4px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+
+  .hero { background: linear-gradient(135deg, #0b2c3d 0%, #1a6080 60%, #2a9bc0 100%); padding: 56px 48px 64px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; inset: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><circle cx="30" cy="30" r="1.5" fill="rgba(255,255,255,0.06)"/></svg>'); }
+  .hero-content { position: relative; z-index: 1; }
+  .hero-stat { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 16px 20px; }
+  .hero-stat .hval { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 600; color: #fff; }
+  .hero-stat .hlbl { font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 2px; }
+
+  .section { padding: 48px 48px; }
+  .section-sm { padding: 32px 48px; }
+  .section-alt { background: #f1f5f9; }
+
+  .chart-wrap { position: relative; width: 100%; height: 260px; }
+  .donut-wrap { position: relative; width: 100%; height: 220px; }
+  .bar-wrap { position: relative; width: 100%; height: 240px; }
+
+  .footer { background: #0b2c3d; color: #cbd5e1; padding: 40px 48px 28px; }
+  .footer-brand { color: #fff; font-family: 'Playfair Display', serif; font-size: 17px; margin-bottom: 4px; }
+  .footer-sub { font-size: 12px; color: #94a3b8; }
+  .footer-link { font-size: 13px; color: #94a3b8; text-decoration: none; display: block; margin-bottom: 6px; }
+  .footer-link:hover { color: #a8d8e8; }
+  .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 28px 0 20px; }
+
+  .info-box { background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 10px; padding: 20px 24px; }
+  .info-row { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid #e0f2fe; }
+  .info-row:last-child { border-bottom: none; }
+
+  #chart-section { transition: opacity 0.2s; }
+  .tab-note { font-size: 13px; color: #64748b; margin-top: 12px; line-height: 1.6; }
+</style>
+
+<div class="page">
+  <h2 class="sr-only">Demografi Statistik Umat — Paroki St. Antonius Padua Purbayan Surakarta. Dashboard data kependudukan umat paroki mencakup pertumbuhan, kelompok usia, jenis kelamin, pendidikan, dan analisis pastoral.</h2>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-content">
+      <div class="section-tag" style="background: rgba(42,155,192,0.25); color: #a8d8e8;">Data Umat</div>
+      <h1 class="serif" style="font-size: 34px; font-weight: 600; color: #fff; margin: 10px 0 8px; line-height: 1.25;">Demografi Statistik Umat</h1>
+      <p style="font-size: 15px; color: rgba(255,255,255,0.75); max-width: 560px; line-height: 1.65; margin: 0 0 36px;">Data statistik umat Paroki St. Antonius Padua Purbayan Surakarta sebagai dasar pengembangan pelayanan pastoral berbasis data.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;">
+        <div class="hero-stat">
+          <div class="hval">4.083</div>
+          <div class="hlbl">Total Umat</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hval">17</div>
+          <div class="hlbl">Total Wilayah</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hval">55</div>
+          <div class="hlbl">Total Lingkungan</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hval" style="font-size: 16px; padding-top: 4px;">Jan 2025</div>
+          <div class="hlbl">Data Terakhir Diperbarui</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OVERVIEW CARDS -->
+  <div class="section" style="padding-bottom: 32px;">
+    <div class="section-tag">Ringkasan Data</div>
+    <h2 class="serif" style="font-size: 22px; font-weight: 600; color: #0b2c3d; margin: 6px 0 24px;">Gambaran Umum Umat</h2>
+    <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px;">
+      <div class="stat-card">
+        <div class="icon-wrap"><i class="ti ti-users" aria-hidden="true"></i></div>
+        <div class="val">4.083</div>
+        <div class="lbl">Total Umat</div>
+      </div>
+      <div class="stat-card">
+        <div class="icon-wrap" style="background: #eff6ff; color: #1d4ed8;"><i class="ti ti-user" aria-hidden="true"></i></div>
+        <div class="val" style="color: #1d4ed8;">1.848</div>
+        <div class="lbl">Laki-laki</div>
+      </div>
+      <div class="stat-card">
+        <div class="icon-wrap" style="background: #fdf2f8; color: #be185d;"><i class="ti ti-user" aria-hidden="true"></i></div>
+        <div class="val" style="color: #be185d;">2.235</div>
+        <div class="lbl">Perempuan</div>
+      </div>
+      <div class="stat-card">
+        <div class="icon-wrap" style="background: #f0fdf4; color: #166534;"><i class="ti ti-map-pin" aria-hidden="true"></i></div>
+        <div class="val" style="color: #166534;">17</div>
+        <div class="lbl">Wilayah Aktif</div>
+      </div>
+      <div class="stat-card">
+        <div class="icon-wrap" style="background: #fefce8; color: #854d0e;"><i class="ti ti-building-community" aria-hidden="true"></i></div>
+        <div class="val" style="color: #854d0e;">55</div>
+        <div class="lbl">Lingkungan Aktif</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" style="margin: 0 48px;">
+
+  <!-- FILTER CHIPS -->
+  <div class="section" style="padding-bottom: 28px;">
+    <div class="label-sm" style="margin-bottom: 12px;">Pilih Kategori Data</div>
+    <div id="chips" style="display: flex; flex-wrap: wrap; gap: 8px;">
+      <span class="chip active" data-cat="pertumbuhan">Pertumbuhan</span>
+      <span class="chip" data-cat="usia">Kelompok Usia</span>
+      <span class="chip" data-cat="gender">Jenis Kelamin</span>
+      <span class="chip" data-cat="pendidikan">Pendidikan</span>
+      <span class="chip" data-cat="perkawinan">Perkawinan</span>
+      <span class="chip" data-cat="ekonomi">Ekonomi</span>
+      <span class="chip" data-cat="pekerjaan">Pekerjaan</span>
+      <span class="chip" data-cat="kondisi">Kondisi Fisik</span>
+    </div>
+  </div>
+
+  <!-- CHART SECTION -->
+  <div id="chart-section" class="section" style="padding-top: 0; padding-bottom: 48px;">
+    <div class="card" style="padding: 28px 30px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+        <div>
+          <div id="chart-tag" class="section-tag">Tren Tahunan</div>
+          <h3 id="chart-title" class="serif" style="font-size: 18px; font-weight: 600; color: #0b2c3d; margin: 6px 0 2px;">Pertumbuhan Jumlah Umat 2022–2025</h3>
+          <p id="chart-sub" style="font-size: 13px; color: #64748b; margin: 0;">Perkembangan jumlah umat terdaftar per tahun</p>
+        </div>
+        <div style="display: flex; gap: 8px;" id="legend-area"></div>
+      </div>
+      <div id="chart-container" style="position: relative; width: 100%; height: 280px;">
+        <canvas id="mainChart" role="img" aria-label="Grafik pertumbuhan umat 2022 hingga 2025"></canvas>
+      </div>
+      <p id="chart-note" class="tab-note">* Data pertumbuhan menunjukkan tren positif selama 3 tahun terakhir. Peningkatan signifikan tercatat pada tahun 2024 dengan penambahan 187 jiwa dibanding tahun sebelumnya.</p>
+    </div>
+  </div>
+
+  <!-- QUICK INSIGHT -->
+  <div class="section-alt section">
+    <div class="section-tag">Kilasan Data</div>
+    <h2 class="serif" style="font-size: 22px; font-weight: 600; color: #0b2c3d; margin: 6px 0 24px;">Temuan Cepat</h2>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;">
+      <div class="insight-card">
+        <div class="insight-icon"><i class="ti ti-trending-up" aria-hidden="true"></i></div>
+        <div>
+          <div style="font-size: 22px; font-weight: 600; color: #166534; font-family: 'Playfair Display', serif;">+12%</div>
+          <div style="font-size: 12px; font-weight: 500; color: #0b2c3d; margin-top: 2px;">Pertumbuhan Umat</div>
+          <div style="font-size: 11px; color: #64748b; margin-top: 2px;">Dibanding 2022</div>
+        </div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-icon"><i class="ti ti-map-pin" aria-hidden="true"></i></div>
+        <div>
+          <div style="font-size: 22px; font-weight: 600; color: #0b2c3d; font-family: 'Playfair Display', serif;">17</div>
+          <div style="font-size: 12px; font-weight: 500; color: #0b2c3d; margin-top: 2px;">Wilayah Aktif</div>
+          <div style="font-size: 11px; color: #64748b; margin-top: 2px;">Tersebar di Surakarta</div>
+        </div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-icon"><i class="ti ti-building-community" aria-hidden="true"></i></div>
+        <div>
+          <div style="font-size: 22px; font-weight: 600; color: #0b2c3d; font-family: 'Playfair Display', serif;">55</div>
+          <div style="font-size: 12px; font-weight: 500; color: #0b2c3d; margin-top: 2px;">Lingkungan Aktif</div>
+          <div style="font-size: 11px; color: #64748b; margin-top: 2px;">Komunitas basis paroki</div>
+        </div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-icon" style="background: #fef3c7; color: #92400e;"><i class="ti ti-chart-pie" aria-hidden="true"></i></div>
+        <div>
+          <div style="font-size: 16px; font-weight: 600; color: #0b2c3d; font-family: 'Playfair Display', serif; line-height: 1.2; margin-top: 2px;">Dewasa Produktif</div>
+          <div style="font-size: 12px; font-weight: 500; color: #0b2c3d; margin-top: 4px;">Kelompok Usia Terbesar</div>
+          <div style="font-size: 11px; color: #64748b; margin-top: 2px;">Usia 25–55 tahun</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ANALISIS PASTORAL -->
+  <div class="section">
+    <div class="section-tag">Analisis</div>
+    <h2 class="serif" style="font-size: 22px; font-weight: 600; color: #0b2c3d; margin: 6px 0 6px;">Temuan dan Arah Pelayanan</h2>
+    <p style="font-size: 14px; color: #64748b; margin: 0 0 24px;">Analisis data statistik umat sebagai dasar perencanaan pastoral yang responsif dan berbasis data.</p>
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;">
+      <div class="pastoral-card">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+          <div style="width: 32px; height: 32px; border-radius: 6px; background: #e8f4f9; display: flex; align-items: center; justify-content: center; color: #1a6080; font-size: 16px;"><i class="ti ti-trending-up" aria-hidden="true"></i></div>
+          <span style="font-weight: 600; font-size: 14px; color: #0b2c3d;">Tren Pertumbuhan Positif</span>
+        </div>
+        <p style="font-size: 13px; color: #475569; line-height: 1.65; margin: 0;">Pertumbuhan umat menunjukkan tren positif yang konsisten, mengindikasikan dinamika komunitas yang sehat dan perlu diimbangi dengan penguatan infrastruktur pelayanan.</p>
+      </div>
+      <div class="pastoral-card">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+          <div style="width: 32px; height: 32px; border-radius: 6px; background: #e8f4f9; display: flex; align-items: center; justify-content: center; color: #1a6080; font-size: 16px;"><i class="ti ti-network" aria-hidden="true"></i></div>
+          <span style="font-weight: 600; font-size: 14px; color: #0b2c3d;">Penguatan Komunitas Basis</span>
+        </div>
+        <p style="font-size: 13px; color: #475569; line-height: 1.65; margin: 0;">Sebaran wilayah dan lingkungan yang luas memerlukan penguatan komunitas basis agar pelayanan pastoral dapat menjangkau seluruh lapisan umat secara merata.</p>
+      </div>
+      <div class="pastoral-card">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+          <div style="width: 32px; height: 32px; border-radius: 6px; background: #e8f4f9; display: flex; align-items: center; justify-content: center; color: #1a6080; font-size: 16px;"><i class="ti ti-calendar-event" aria-hidden="true"></i></div>
+          <span style="font-weight: 600; font-size: 14px; color: #0b2c3d;">Perencanaan Program Pastoral</span>
+        </div>
+        <p style="font-size: 13px; color: #475569; line-height: 1.65; margin: 0;">Data kelompok usia membantu perencanaan program pastoral yang tepat sasaran — dari pastoral kaum muda, keluarga, hingga lansia dengan kebutuhan yang berbeda-beda.</p>
+      </div>
+      <div class="pastoral-card">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+          <div style="width: 32px; height: 32px; border-radius: 6px; background: #e8f4f9; display: flex; align-items: center; justify-content: center; color: #1a6080; font-size: 16px;"><i class="ti ti-school" aria-hidden="true"></i></div>
+          <span style="font-weight: 600; font-size: 14px; color: #0b2c3d;">Pelayanan yang Relevan</span>
+        </div>
+        <p style="font-size: 13px; color: #475569; line-height: 1.65; margin: 0;">Informasi pendidikan dan pekerjaan umat mendukung desain pelayanan yang lebih relevan dan kontekstual, termasuk program sosial-ekonomi dan pemberdayaan komunitas.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- INFO DATA -->
+  <div class="section-alt section">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start;">
+      <div>
+        <div class="section-tag">Transparansi Data</div>
+        <h2 class="serif" style="font-size: 22px; font-weight: 600; color: #0b2c3d; margin: 6px 0 12px;">Tentang Data Statistik</h2>
+        <p style="font-size: 14px; color: #475569; line-height: 1.7; margin: 0 0 20px;">Data diperoleh dari basis data umat Paroki St. Antonius Padua Purbayan dan digunakan untuk mendukung pengambilan keputusan pastoral, perencanaan kegiatan, serta pengembangan pelayanan umat.</p>
+        <div class="badge badge-green" style="margin-right: 8px;"><i class="ti ti-check" style="font-size: 11px;" aria-hidden="true"></i> Data Terverifikasi</div>
+        <div class="badge badge-blue" style="display: inline-flex;"><i class="ti ti-refresh" style="font-size: 11px;" aria-hidden="true"></i> Diperbarui Berkala</div>
+      </div>
+      <div class="info-box">
+        <div class="info-row">
+          <div style="width: 32px; height: 32px; border-radius: 6px; background: #bae6fd; display: flex; align-items: center; justify-content: center; color: #0369a1; font-size: 15px; flex-shrink: 0;"><i class="ti ti-calendar" aria-hidden="true"></i></div>
+          <div>
+            <div style="font-size: 11px; color: #0369a1; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Tanggal Pembaruan</div>
+            <div style="font-size: 14px; color: #0b2c3d; font-weight: 500; margin-top: 2px;">Januari 2025</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div style="width: 32px; height: 32px; border-radius: 6px; background: #bae6fd; display: flex; align-items: center; justify-content: center; color: #0369a1; font-size: 15px; flex-shrink: 0;"><i class="ti ti-database" aria-hidden="true"></i></div>
+          <div>
+            <div style="font-size: 11px; color: #0369a1; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Sumber Data</div>
+            <div style="font-size: 14px; color: #0b2c3d; font-weight: 500; margin-top: 2px;">Basis Data Umat Paroki Purbayan</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div style="width: 32px; height: 32px; border-radius: 6px; background: #bae6fd; display: flex; align-items: center; justify-content: center; color: #0369a1; font-size: 15px; flex-shrink: 0;"><i class="ti ti-user-check" aria-hidden="true"></i></div>
+          <div>
+            <div style="font-size: 11px; color: #0369a1; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Penanggung Jawab</div>
+            <div style="font-size: 14px; color: #0b2c3d; font-weight: 500; margin-top: 2px;">Sekretariat Paroki & Tim Data</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 0;">
+      <div>
+        <div style="width: 40px; height: 40px; border-radius: 8px; background: rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; margin-bottom: 12px; color: #a8d8e8; font-size: 20px;"><i class="ti ti-building-church" aria-hidden="true"></i></div>
+        <div class="footer-brand">Paroki St. Antonius Padua</div>
+        <div class="footer-sub" style="margin-top: 2px;">Purbayan, Surakarta</div>
+        <p style="font-size: 12px; color: #64748b; margin: 12px 0 0; line-height: 1.6;">Melayani umat dengan kasih, bersama dalam iman dan komunitas.</p>
+      </div>
+      <div>
+        <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #94a3b8; margin-bottom: 14px;">Navigasi</div>
+        <a class="footer-link" href="#">Beranda</a>
+        <a class="footer-link" href="#">Profil Gereja</a>
+        <a class="footer-link" href="#">Sejarah Gereja</a>
+        <a class="footer-link" href="#">Demografi Umat</a>
+      </div>
+      <div>
+        <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #94a3b8; margin-bottom: 14px;">Pelayanan</div>
+        <a class="footer-link" href="#">Jadwal Misa</a>
+        <a class="footer-link" href="#">Sakramen</a>
+        <a class="footer-link" href="#">Komunitas</a>
+        <a class="footer-link" href="#">Kegiatan</a>
+      </div>
+      <div>
+        <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #94a3b8; margin-bottom: 14px;">Kontak</div>
+        <a class="footer-link" href="#"><i class="ti ti-map-pin" style="font-size: 12px; margin-right: 4px;" aria-hidden="true"></i>Jl. Purbayan, Surakarta</a>
+        <a class="footer-link" href="#"><i class="ti ti-phone" style="font-size: 12px; margin-right: 4px;" aria-hidden="true"></i>(0271) 000-0000</a>
+        <a class="footer-link" href="#"><i class="ti ti-mail" style="font-size: 12px; margin-right: 4px;" aria-hidden="true"></i>info@parokipurbayan.id</a>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #475569;">
+      <span>© 2025 Paroki St. Antonius Padua Purbayan Surakarta</span>
+      <span>Dengan kasih melayani umat</span>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const chartConfigs = {
+  pertumbuhan: {
+    tag: 'Tren Tahunan',
+    title: 'Pertumbuhan Jumlah Umat 2022–2025',
+    sub: 'Perkembangan jumlah umat terdaftar per tahun',
+    note: '* Data pertumbuhan menunjukkan tren positif selama 3 tahun terakhir. Peningkatan signifikan tercatat pada tahun 2024 dengan penambahan 187 jiwa dibanding tahun sebelumnya.',
+    type: 'line',
+    height: 280,
+    legend: [{ color: '#1a6080', label: 'Total Umat' }, { color: '#2a9bc0', label: 'Umat Aktif' }],
+    data: {
+      labels: ['2022','2023','2024','2025'],
+      datasets: [
+        { label: 'Total Umat', data: [3641,3812,3999,4083], borderColor: '#1a6080', backgroundColor: 'rgba(26,96,128,0.08)', fill: true, tension: 0.4, pointRadius: 5, pointBackgroundColor: '#1a6080', borderWidth: 2 },
+        { label: 'Umat Aktif', data: [3200,3380,3620,3750], borderColor: '#2a9bc0', backgroundColor: 'rgba(42,155,192,0.05)', fill: true, tension: 0.4, pointRadius: 5, pointBackgroundColor: '#2a9bc0', borderWidth: 2, borderDash: [4,3] }
+      ]
+    },
+    options: { scales: { y: { min: 3000, suggestedMax: 4500, grid: { color: 'rgba(0,0,0,0.04)' }, ticks: { font: { size: 11 }, color: '#94a3b8' } }, x: { grid: { display: false }, ticks: { font: { size: 12 }, color: '#64748b' } } } }
+  },
+  usia: {
+    tag: 'Komposisi Usia',
+    title: 'Distribusi Umat Berdasarkan Kelompok Usia',
+    sub: 'Sebaran umat dalam kategori usia pastoral',
+    note: '* Kelompok dewasa produktif (25–55 tahun) mendominasi komposisi umat. Kelompok anak dan remaja perlu mendapat perhatian khusus dalam program pastoral.',
+    type: 'bar',
+    height: 260,
+    legend: [{ color: '#0b2c3d', label: 'Jumlah Jiwa' }],
+    data: {
+      labels: ['Balita (0–5)', 'Anak (6–12)', 'Remaja (13–18)', 'Pemuda (19–25)', 'Dewasa (26–55)', 'Lansia (56+)'],
+      datasets: [{ label: 'Jumlah Jiwa', data: [210, 380, 420, 510, 1820, 743], backgroundColor: ['#a8d8e8','#7bbfd8','#4da5c8','#2a9bc0','#1a6080','#0b2c3d'], borderRadius: 4 }]
+    },
+    options: { scales: { y: { grid: { color: 'rgba(0,0,0,0.04)' }, ticks: { font: { size: 11 }, color: '#94a3b8' } }, x: { grid: { display: false }, ticks: { font: { size: 11 }, color: '#64748b', maxRotation: 20 } } }, plugins: { legend: { display: false } } }
+  },
+  gender: {
+    tag: 'Jenis Kelamin',
+    title: 'Komposisi Umat Berdasarkan Jenis Kelamin',
+    sub: 'Perbandingan jumlah umat laki-laki dan perempuan',
+    note: '* Perempuan mendominasi komposisi umat dengan selisih 387 jiwa. Hal ini perlu dipertimbangkan dalam penyusunan program pelayanan yang inklusif gender.',
+    type: 'doughnut',
+    height: 240,
+    legend: [{ color: '#1d4ed8', label: 'Laki-laki — 1.848 (45%)' }, { color: '#be185d', label: 'Perempuan — 2.235 (55%)' }],
+    data: {
+      labels: ['Laki-laki', 'Perempuan'],
+      datasets: [{ data: [1848, 2235], backgroundColor: ['#1d4ed8','#be185d'], borderWidth: 0, hoverOffset: 4 }]
+    },
+    options: { cutout: '65%', plugins: { legend: { display: false } } }
+  },
+  pendidikan: {
+    tag: 'Tingkat Pendidikan',
+    title: 'Distribusi Umat Berdasarkan Tingkat Pendidikan',
+    sub: 'Komposisi pendidikan formal umat paroki',
+    note: '* Mayoritas umat berpendidikan menengah hingga tinggi. Data ini mendukung perencanaan program pemberdayaan dan pendampingan yang sesuai kapasitas komunitas.',
+    type: 'bar',
+    height: 250,
+    legend: [{ color: '#1a6080', label: 'Jumlah Jiwa' }],
+    data: {
+      labels: ['SD', 'SMP', 'SMA/SMK', 'D3', 'S1', 'S2/S3'],
+      datasets: [{ label: 'Jiwa', data: [320, 410, 1420, 380, 1180, 373], backgroundColor: '#1a6080', borderRadius: 4, hoverBackgroundColor: '#0b2c3d' }]
+    },
+    options: { scales: { y: { grid: { color: 'rgba(0,0,0,0.04)' }, ticks: { font: { size: 11 }, color: '#94a3b8' } }, x: { grid: { display: false }, ticks: { font: { size: 12 }, color: '#64748b' } } }, plugins: { legend: { display: false } } }
+  },
+  perkawinan: {
+    tag: 'Status Perkawinan',
+    title: 'Distribusi Umat Berdasarkan Status Perkawinan',
+    sub: 'Sebaran status perkawinan umat paroki',
+    note: '* Data status perkawinan digunakan untuk perencanaan program pastoral keluarga, pendampingan janda/duda, dan persiapan pernikahan bagi yang belum menikah.',
+    type: 'doughnut',
+    height: 240,
+    legend: [{ color: '#1a6080', label: 'Menikah — 2.210' }, { color: '#2a9bc0', label: 'Belum Menikah — 1.420' }, { color: '#a8d8e8', label: 'Janda/Duda — 453' }],
+    data: {
+      labels: ['Menikah','Belum Menikah','Janda/Duda'],
+      datasets: [{ data: [2210,1420,453], backgroundColor: ['#1a6080','#2a9bc0','#a8d8e8'], borderWidth: 0 }]
+    },
+    options: { cutout: '60%', plugins: { legend: { display: false } } }
+  },
+  ekonomi: {
+    tag: 'Kondisi Ekonomi',
+    title: 'Distribusi Umat Berdasarkan Kondisi Ekonomi',
+    sub: 'Gambaran kondisi sosial-ekonomi umat paroki',
+    note: '* Data ekonomi membantu penentuan prioritas penerima bantuan sosial, beasiswa, dan program pemberdayaan ekonomi paroki.',
+    type: 'bar',
+    height: 240,
+    legend: [{ color: '#1a6080', label: 'Jiwa' }],
+    data: {
+      labels: ['Pra-Sejahtera', 'Sejahtera I', 'Sejahtera II', 'Sejahtera III', 'Sejahtera III+'],
+      datasets: [{ label: 'Jiwa', data: [210, 640, 1480, 1200, 553], backgroundColor: ['#e8f4f9','#a8d8e8','#2a9bc0','#1a6080','#0b2c3d'], borderRadius: 4 }]
+    },
+    options: { scales: { y: { grid: { color: 'rgba(0,0,0,0.04)' }, ticks: { font: { size: 11 }, color: '#94a3b8' } }, x: { grid: { display: false }, ticks: { font: { size: 11 }, color: '#64748b', maxRotation: 10 } } }, plugins: { legend: { display: false } } }
+  },
+  pekerjaan: {
+    tag: 'Profesi',
+    title: 'Distribusi Umat Berdasarkan Pekerjaan',
+    sub: 'Komposisi profesi dan mata pencaharian umat',
+    note: '* Beragamnya profesi umat membuka peluang program pastoral berbasis komunitas profesi, networking, dan pelayanan lintas sektor.',
+    type: 'bar',
+    height: 270,
+    legend: [{ color: '#1a6080', label: 'Jiwa' }],
+    data: {
+      labels: ['Pegawai Swasta', 'Wiraswasta', 'PNS/TNI/Polri', 'Pelajar/Mhs', 'Ibu Rumah Tangga', 'Pensiunan', 'Lainnya'],
+      datasets: [{ label: 'Jiwa', data: [980, 720, 410, 630, 580, 340, 423], backgroundColor: '#2a9bc0', borderRadius: 4, hoverBackgroundColor: '#1a6080' }]
+    },
+    options: { indexAxis: 'y', scales: { x: { grid: { color: 'rgba(0,0,0,0.04)' }, ticks: { font: { size: 11 }, color: '#94a3b8' } }, y: { grid: { display: false }, ticks: { font: { size: 12 }, color: '#64748b' } } }, plugins: { legend: { display: false } } }
+  },
+  kondisi: {
+    tag: 'Kondisi Fisik',
+    title: 'Distribusi Umat Berdasarkan Kondisi Fisik',
+    sub: 'Data umat dengan kebutuhan layanan khusus',
+    note: '* Data kondisi fisik digunakan untuk memastikan aksesibilitas fasilitas gereja dan merancang program pastoral yang inklusif bagi umat berkebutuhan khusus.',
+    type: 'doughnut',
+    height: 240,
+    legend: [{ color: '#1a6080', label: 'Sehat — 3.910' }, { color: '#2a9bc0', label: 'Disabilitas Fisik — 98' }, { color: '#a8d8e8', label: 'Disabilitas Sensorik — 45' }, { color: '#e8f4f9', label: 'Lainnya — 30' }],
+    data: {
+      labels: ['Sehat','Disabilitas Fisik','Disabilitas Sensorik','Lainnya'],
+      datasets: [{ data: [3910,98,45,30], backgroundColor: ['#1a6080','#2a9bc0','#a8d8e8','#e2e8f0'], borderWidth: 0 }]
+    },
+    options: { cutout: '60%', plugins: { legend: { display: false } } }
+  }
+};
+
+let currentChart = null;
+
+function renderLegend(items) {
+  const el = document.getElementById('legend-area');
+  el.innerHTML = items.map(i => `<span style="display:flex;align-items:center;gap:5px;font-size:12px;color:#64748b"><span style="width:10px;height:10px;border-radius:2px;background:${i.color};display:inline-block;flex-shrink:0"></span>${i.label}</span>`).join('');
+}
+
+function loadChart(cat) {
+  const cfg = chartConfigs[cat];
+  document.getElementById('chart-tag').textContent = cfg.tag;
+  document.getElementById('chart-title').textContent = cfg.title;
+  document.getElementById('chart-sub').textContent = cfg.sub;
+  document.getElementById('chart-note').textContent = cfg.note;
+  renderLegend(cfg.legend);
+
+  const wrap = document.getElementById('chart-container');
+  wrap.style.height = cfg.height + 'px';
+  wrap.innerHTML = `<canvas id="mainChart" role="img" aria-label="${cfg.title}"></canvas>`;
+
+  if (currentChart) { try { currentChart.destroy(); } catch(e){} }
+
+  const baseOpts = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { backgroundColor: '#0b2c3d', titleFont: { size: 12 }, bodyFont: { size: 12 }, padding: 10, cornerRadius: 6 } }
+  };
+
+  const merged = Object.assign({}, baseOpts, cfg.options || {});
+  if (cfg.options && cfg.options.scales) merged.scales = cfg.options.scales;
+  if (cfg.options && cfg.options.cutout) merged.cutout = cfg.options.cutout;
+  if (cfg.options && cfg.options.indexAxis) merged.indexAxis = cfg.options.indexAxis;
+
+  currentChart = new Chart(document.getElementById('mainChart'), {
+    type: cfg.type,
+    data: cfg.data,
+    options: merged
+  });
+}
+
+document.getElementById('chips').addEventListener('click', function(e) {
+  const chip = e.target.closest('.chip');
+  if (!chip) return;
+  document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+  chip.classList.add('active');
+  loadChart(chip.dataset.cat);
+});
+
+loadChart('pertumbuhan');
+</script>

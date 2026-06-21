@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hymne Paroki — St. Antonius Padua Purbayan</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display (Serif) & Inter (Sans-Serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0b2c3d',     /* Dark Ecclesiastical Navy */
+                        neutralBg: '#F8F8F6',   /* Premium Warm Off-White */
+                        surfaceCard: '#FFFFFF', /* Pure White Card Surface */
+                        textPrimary: '#1E293B', /* Deep Charcoal Slate */
+                        textSecondary: '#64748B',/* Muted Liturgical Slate */
+                        accentBorder: '#E5E7EB' /* Subtle Separation Gray */
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .lyric-stanza { page-break-inside: avoid; break-inside: avoid; }
+    </style>
+</head>
+<body class="bg-neutralBg text-textPrimary font-sans antialiased selection:bg-primary/10 selection:text-primary">
+
+    <!-- ────────────────────────
+    SECTION 1 — HERO
+    ──────────────────────── -->
+    <header class="relative w-full min-h-[85vh] flex items-center justify-center overflow-hidden bg-primary px-6 py-20 text-center">
+        <!-- Ambient Church Interior Background -->
+        <div class="absolute inset-0 z-0 scale-105 opacity-30 blur-[4px] mix-blend-luminosity pointer-events-none">
+            <img src="https://images.unsplash.com/photo-1548625361-155defe219f2?q=80&w=1920&auto=format&fit=crop" 
+                 alt="Gereja St. Antonius Padua Purbayan Interior" 
+                 class="w-full h-full object-cover">
+        </div>
+        <!-- Tailored Liturgical Dark Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/85 to-primary z-10"></div>
+        
+        <!-- Hero Content Layer -->
+        <div class="relative z-20 max-w-4xl mx-auto space-y-6">
+            <span class="text-xs uppercase tracking-[0.3em] text-textSecondary font-semibold inline-block">HYMNE PAROKI</span>
+            <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-white font-medium tracking-tight leading-[1.15]">
+                Hymne Paroki St. Antonius Padua Purbayan
+            </h1>
+            <div class="w-16 h-[1px] bg-white/20 mx-auto my-6"></div>
+            <p class="text-slate-300 text-base sm:text-lg lg:text-xl font-light max-w-2xl mx-auto leading-relaxed">
+                Lagu iman yang menyatukan umat dalam semangat pelayanan, persaudaraan, dan pewartaan Injil.
+            </p>
+            
+            <!-- Contextual Actions -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
+                <a href="#media-player" class="w-full sm:w-auto bg-white text-primary px-8 py-4 rounded-md font-medium text-sm shadow-sm hover:bg-neutralBg transition-all duration-300 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-play text-xs opacity-80"></i> Putar Hymne
+                </a>
+                <a href="#lyrics" class="w-full sm:w-auto border border-white/20 text-white px-8 py-4 rounded-md font-medium text-sm hover:bg-white/5 transition-all duration-300 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-arrow-down text-xs opacity-60"></i> Lihat Lirik
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ────────────────────────
+    SECTION 2 — VIDEO & STORY
+    ──────────────────────── -->
+    <section id="media-player" class="py-24 lg:py-32 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            <!-- Left: Embedded Video Player -->
+            <div class="lg:col-span-7 w-full">
+                <div class="aspect-video w-full bg-primary/5 rounded-xl overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.03)] border border-accentBorder relative">
+                    <!-- Replace embed ID with the official parish video identifier when live -->
+                    <iframe class="w-full h-full object-cover" 
+                            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                            title="Hymne Paroki St. Antonius Padua Purbayan" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Right: Premium Information Card -->
+            <div class="lg:col-span-5 bg-surfaceCard border border-accentBorder rounded-xl p-8 lg:p-10 shadow-[0_4px_20px_rgba(0,0,0,0.01)] space-y-6">
+                <div class="space-y-2">
+                    <span class="text-xs uppercase tracking-widest text-textSecondary font-semibold block">TENTANG HYMNE</span>
+                    <h2 class="font-serif text-2xl lg:text-3xl text-primary font-medium tracking-tight">
+                        Hymne untuk Satu Abad Perjalanan Iman
+                    </h2>
+                </div>
+                <p class="text-textSecondary text-sm lg:text-base font-light leading-relaxed">
+                    Hymne Paroki St. Antonius Purbayan merupakan karya Bapak Linus Putut Pudyantoro yang dipersembahkan sebagai hadiah bagi Paroki Purbayan dalam perayaan 100 tahun berdirinya paroki. Lagu ini pertama kali dinyanyikan pada Misa Ignatian tanggal 31 Juli 2016 dan menjadi simbol persatuan serta semangat pelayanan umat.
+                </p>
+                
+                <!-- Clear Metadata Grid -->
+                <div class="pt-6 border-t border-accentBorder grid grid-cols-1 sm:grid-cols-2 gap-y-5 gap-x-6">
+                    <div class="space-y-1">
+                        <span class="text-textSecondary block uppercase tracking-wider font-medium text-[10px]">Pencipta</span>
+                        <span class="text-textPrimary font-medium text-sm">Linus Putut Pudyantoro</span>
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-textSecondary block uppercase tracking-wider font-medium text-[10px]">Tahun Persembahan</span>
+                        <span class="text-textPrimary font-medium text-sm">2016</span>
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-textSecondary block uppercase tracking-wider font-medium text-[10px]">Momentum</span>
+                        <span class="text-textPrimary font-medium text-sm">100 Tahun Paroki Purbayan</span>
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-textSecondary block uppercase tracking-wider font-medium text-[10px]">Pertama Dinyanyikan</span>
+                        <span class="text-textPrimary font-medium text-sm">Misa Ignatian 31 Juli 2016</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ────────────────────────
+    SECTION 3 — MAKNA HYMNE
+    ──────────────────────── -->
+    <section class="py-24 bg-surfaceCard border-t border-b border-accentBorder">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-xl mx-auto space-y-3 mb-16">
+                <span class="text-xs uppercase tracking-[0.2em] text-textSecondary font-semibold block">REFLEKSI</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-primary font-medium tracking-tight">Nilai-Nilai yang Dihidupi dalam Hymne</h2>
+                <div class="w-12 h-[1px] bg-primary/20 mx-auto pt-2"></div>
+            </div>
+
+            <!-- Balanced Theological Row Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+                <!-- Card 1: IMAN -->
+                <div class="space-y-4 p-2">
+                    <div class="w-8 h-8 rounded-full bg-neutralBg flex items-center justify-center text-xs font-serif text-textSecondary border border-accentBorder">I</div>
+                    <h3 class="font-serif text-xl font-medium text-primary tracking-tight">IMAN</h3>
+                    <p class="text-textSecondary text-sm lg:text-base font-light leading-relaxed">
+                        Mengajak umat untuk meneladani Santo Antonius Padua dalam kesetiaan kepada Kristus.
+                    </p>
+                </div>
+                <!-- Card 2: PERSAUDARAAN -->
+                <div class="space-y-4 p-2 border-t md:border-t-0 md:border-x border-accentBorder/60 pt-6 md:pt-0 md:px-8 lg:px-12">
+                    <div class="w-8 h-8 rounded-full bg-neutralBg flex items-center justify-center text-xs font-serif text-textSecondary border border-accentBorder">II</div>
+                    <h3 class="font-serif text-xl font-medium text-primary tracking-tight">PERSAUDARAAN</h3>
+                    <p class="text-textSecondary text-sm lg:text-base font-light leading-relaxed">
+                        Menguatkan kebersamaan umat sebagai satu keluarga Allah yang utuh dan saling topang.
+                    </p>
+                </div>
+                <!-- Card 3: PELAYANAN -->
+                <div class="space-y-4 p-2 border-t md:border-t-0 pt-6 md:pt-0">
+                    <div class="w-8 h-8 rounded-full bg-neutralBg flex items-center justify-center text-xs font-serif text-textSecondary border border-accentBorder">III</div>
+                    <h3 class="font-serif text-xl font-medium text-primary tracking-tight">PELAYANAN</h3>
+                    <p class="text-textSecondary text-sm lg:text-base font-light leading-relaxed">
+                        Mendorong semangat berbagi dan melayani sesama dengan ketulusan kasih batiniah.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ────────────────────────
+    SECTION 4 — LIRIK HYMNE
+    ──────────────────────── -->
+    <section id="lyrics" class="py-24 lg:py-32 px-6 max-w-4xl mx-auto">
+        <div class="bg-surfaceCard border border-accentBorder rounded-2xl p-8 sm:p-16 lg:p-20 shadow-[0_4px_30px_rgba(0,0,0,0.01)] relative">
+            
+            <!-- Aesthetic Liturgical Detail -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-neutralBg border border-accentBorder px-4 py-2 rounded-full text-textSecondary/60 text-xs tracking-widest">
+                <i class="fa-solid fa-music"></i>
+            </div>
+
+            <div class="text-center space-y-12">
+                <div class="space-y-2">
+                    <h2 class="font-serif text-3xl md:text-4xl text-primary font-medium tracking-tight">Lirik Hymne Paroki</h2>
+                    <p class="text-xs uppercase tracking-widest text-textSecondary font-medium">St. Antonius Padua Purbayan</p>
+                </div>
+                
+                <div class="w-12 h-[1px] bg-accentBorder mx-auto"></div>
+
+                <!-- Highly Legible Hymn Typography Layout -->
+                <div class="font-sans text-base md:text-lg text-textPrimary font-light leading-[2.1] tracking-wide space-y-12 max-w-xl mx-auto">
+                    
+                    <!-- Stanza 1 -->
+                    <div class="lyric-stanza">
+                        Santo Antonius Padua, teladan iman yang setia<br>
+                        Bersaksi wartakan cinta Tuhan, membawa pertobatan<br>
+                        Jiwai langkah hidup kami, gigih bersaksi s'pertimu<br>
+                        S'makin besar kemuliaan Tuhan dalam doa dan karya
+                    </div>
+
+                    <!-- Refrain (Visual Emphasis Block) -->
+                    <div class="lyric-stanza bg-neutralBg border-l-2 border-primary/30 py-6 px-6 sm:px-8 rounded-r-lg text-left max-w-lg mx-auto my-8">
+                        <span class="block text-xs uppercase tracking-widest font-semibold text-primary/70 mb-3 font-sans not-italic">Refrain:</span>
+                        <p class="font-serif text-primary italic text-base md:text-lg leading-relaxed">
+                            Santo Antonius Sang Pelindung, Umat Paroki Purbayan<br>
+                            Satukanlah kami di dalam kasih, berbagi saling melayani<br>
+                            Menyongsong kehidupan kekal s'perti yang Yesus janji<br>
+                            Bawalah kami ya Santo Antonius dalam doamu s'lalu<br>
+                            Bawalah kami ya Santo Antonius dalam doamu s'lalu
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ────────────────────────
+    SECTION 5 — QUOTATION
+    ──────────────────────── -->
+    <section class="bg-primary text-white py-24 px-6 text-center relative overflow-hidden">
+        <!-- Watermark Graphic Element -->
+        <div class="absolute inset-0 opacity-[0.03] font-serif text-[18rem] flex items-center justify-center select-none pointer-events-none translate-y-8">
+            “
+        </div>
+        <div class="relative z-10 max-w-3xl mx-auto space-y-6">
+            <blockquote class="font-serif text-2xl sm:text-3xl lg:text-4xl italic tracking-wide font-normal max-w-2xl mx-auto leading-relaxed text-slate-100">
+                "Satukanlah kami di dalam kasih,<br class="hidden sm:inline"> berbagi saling melayani."
+            </blockquote>
+            <div class="w-12 h-[1px] bg-white/20 mx-auto"></div>
+            <cite class="text-xs uppercase tracking-[0.2em] text-slate-400 not-italic block font-medium">
+                — Hymne Paroki St. Antonius Padua Purbayan
+            </cite>
+        </div>
+    </section>
+
+    <!-- ────────────────────────
+    SECTION 6 — FOOTER CTA
+    ──────────────────────── -->
+    <section class="py-24 lg:py-32 px-6 text-center max-w-4xl mx-auto space-y-6">
+        <h2 class="font-serif text-3xl md:text-4xl text-primary font-medium tracking-tight">
+            Mari Menghidupi Semangat Santo Antonius
+        </h2>
+        <p class="text-textSecondary text-sm sm:text-base font-light max-w-md mx-auto leading-relaxed">
+            Bersama membangun persekutuan yang beriman, bersaudara, dan melayani.
+        </p>
+        <div class="pt-4">
+            <a href="/" class="inline-block border border-primary text-primary px-8 py-3.5 rounded-md font-medium text-xs uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300">
+                Kembali ke Beranda
+            </a>
+        </div>
+    </section>
+
+</body>
+</html>

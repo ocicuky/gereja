@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karyawan Paroki — St. Antonius Padua Purbayan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0b2c3d',
+                        secondary: '#1a6080',
+                        accent: '#2a9bc0',
+                        bgSlate: '#f8fafc',
+                        textMain: '#1f2937',
+                        textMuted: '#475569',
+                        borderColor: '#e2e8f0'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    },
+                    boxShadow: {
+                        subtle: '0 4px 20px -2px rgba(11, 44, 61, 0.02), 0 2px 6px -1px rgba(11, 44, 61, 0.02)',
+                        hoverCard: '0 12px 30px -4px rgba(11, 44, 61, 0.06), 0 4px 12px -2px rgba(11, 44, 61, 0.02)'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-bgSlate text-textMain antialiased selection:bg-secondary/10 selection:text-primary">
+
+    <nav class="bg-white/90 backdrop-blur-md border-b border-borderColor sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 border border-primary flex items-center justify-center rounded-sm">
+                    <span class="font-serif font-bold text-xs tracking-tighter text-primary">IHS</span>
+                </div>
+                <div>
+                    <span class="block text-[9px] tracking-[0.2em] uppercase font-bold text-textMuted">Portal Resmi Paroki</span>
+                    <span class="block font-serif text-base font-bold tracking-tight text-primary">St. Antonius Padua Purbayan</span>
+                </div>
+            </div>
+            <div class="hidden lg:flex items-center gap-8 text-xs font-semibold uppercase tracking-widest text-textMuted">
+                <a href="#" class="hover:text-primary transition">Beranda</a>
+                <a href="#" class="hover:text-primary transition">Profil</a>
+                <a href="#" class="hover:text-primary transition">Dewan Pastoral</a>
+                <a href="#" class="text-primary font-bold border-b-2 border-secondary pb-1">Karyawan Paroki</a>
+                <a href="#" class="bg-primary text-white px-4 py-2 rounded hover:bg-secondary transition uppercase tracking-widest text-[10px]">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative bg-primary text-white overflow-hidden h-[380px] flex items-center">
+        <div class="absolute inset-0 z-0 opacity-20 mix-blend-luminosity transform scale-100">
+            <img src="image_c82a23.jpg" alt="Atmosfer Gereja Purbayan" class="w-full h-full object-cover object-center">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-primary via-primary/95 to-primary z-10"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-20 w-full">
+            <nav class="flex items-center gap-2 text-[11px] uppercase tracking-widest text-slate-400 mb-4 font-medium">
+                <a href="#" class="hover:text-white transition">Profil</a>
+                <i class="fa-solid fa-chevron-right text-[8px] opacity-50"></i>
+                <span class="text-white">Karyawan Paroki</span>
+            </nav>
+            
+            <div class="max-w-3xl space-y-4">
+                <h1 class="text-4xl lg:text-5xl font-serif font-normal tracking-tight text-white">
+                    Karyawan Paroki
+                </h1>
+                <div class="w-16 h-[2px] bg-secondary"></div>
+                <p class="text-slate-300 font-sans text-sm md:text-base font-light max-w-2xl leading-relaxed">
+                    Melayani umat dengan dedikasi, tanggung jawab, dan semangat pelayanan dalam mendukung karya pastoral Gereja.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-20 bg-white border-b border-borderColor">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center space-y-2 mb-16">
+                <span class="text-[10px] uppercase font-bold tracking-[0.25em] text-secondary block">Pelayanan Utama</span>
+                <h2 class="text-3xl font-serif font-medium text-primary">Staf Pendamping Utama</h2>
+                <div class="w-12 h-[1px] bg-borderColor mx-auto mt-3"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-bgSlate rounded-2xl p-6 border border-borderColor shadow-subtle hover:shadow-hoverCard transition-all duration-300 group flex flex-col sm:flex-row gap-6 items-center">
+                    <div class="aspect-[3/4] w-36 rounded-xl overflow-hidden bg-white border border-borderColor flex-shrink-0">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400" alt="Kepala Sekretariat" class="w-full h-full object-cover filter grayscale contrast-105 group-hover:grayscale-0 group-hover:scale-102 transition duration-500">
+                    </div>
+                    <div class="text-center sm:text-left space-y-2">
+                        <div class="inline-block bg-primary/5 px-2.5 py-0.5 rounded text-[10px] uppercase tracking-wider font-bold text-primary">Kepala Sekretariat</div>
+                        <h3 class="font-serif text-lg font-bold text-primary">Yoseph Bagus Adi, S.E.</h3>
+                        <p class="text-xs text-textMuted font-light leading-relaxed

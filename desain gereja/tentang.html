@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Gereja — Paroki Sancta Maria</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display (Serif) & Plus Jakarta Sans (Sans-Serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Core Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandPrimary: '#0b2c3d',
+                        brandInteractive: '#1a6080',
+                        brandAccent: '#2a9bc0',
+                        brandSoftAccent: '#a8d8e8',
+                        brandBg: '#f5f9fb',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        subtleCard: '0 4px 20px -2px rgba(11, 44, 61, 0.03), 0 2px 6px -1px rgba(11, 44, 61, 0.02)',
+                        subtleHover: '0 12px 30px -4px rgba(11, 44, 61, 0.06), 0 4px 12px -2px rgba(11, 44, 61, 0.03)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f5f9fb;
+            color: #0b2c3d;
+            letter-spacing: -0.01em;
+        }
+        .font-heading {
+            font-family: 'Playfair Display', serif;
+            letter-spacing: -0.02em;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brandSoftAccent selection:text-brandPrimary">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="bg-brandPrimary text-white sticky top-0 z-50 shadow-sm border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3.5">
+                <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center border border-white/10">
+                    <i class="fa-solid fa-cross text-brandSoftAccent text-base"></i>
+                </div>
+                <div>
+                    <span class="block text-[10px] uppercase tracking-widest text-brandSoftAccent font-bold">Paroki Agung</span>
+                    <span class="block text-base font-heading font-bold tracking-wide -mt-0.5">Sancta Maria</span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-xs uppercase tracking-wider font-semibold">
+                <a href="#" class="text-white/70 hover:text-white transition">Beranda</a>
+                <a href="#" class="text-brandSoftAccent relative after:absolute after:bottom-[-29px] after:left-0 after:w-full after:h-[3px] after:bg-brandSoftAccent">Tentang Gereja</a>
+                <a href="#" class="text-white/70 hover:text-white transition">Jadwal Misa</a>
+                <a href="#" class="text-white/70 hover:text-white transition">Warta Paroki</a>
+                <a href="#" class="text-white/70 hover:text-white transition">Kontak</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="#" class="hidden sm:inline-flex bg-brandInteractive hover:bg-brandAccent text-white text-[11px] uppercase tracking-widest font-bold px-5 h-10 items-center rounded-lg transition duration-200">
+                    Sekretariat Online
+                </a>
+                <button class="md:hidden text-white p-2" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars-staggered text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. HERO BANNER SECTION -->
+    <header class="relative bg-brandPrimary text-white py-28 lg:py-36 overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-20 mix-blend-luminosity transform scale-100 object-center">
+            <img src="https://images.unsplash.com/photo-1548625361-155defe219fa?auto=format&fit=crop&q=80&w=1920" alt="Church Interior Architecture" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-brandPrimary via-brandPrimary/85 to-brandPrimary/40 z-0"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <nav class="flex items-center gap-2 text-[10px] uppercase tracking-widest text-brandSoftAccent/80 mb-5 font-bold">
+                <a href="#" class="hover:text-white transition">Beranda</a>
+                <span class="text-white/20 text-xs">/</span>
+                <span class="text-white/60">Halaman Profil</span>
+                <span class="text-white/20 text-xs">/</span>
+                <span class="text-white">Tentang Gereja</span>
+            </nav>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold max-w-3xl leading-[1.1]">
+                Tentang Gereja
+            </h1>
+            <div class="w-16 h-[2px] bg-brandAccent mt-6 mb-5"></div>
+            <p class="text-white/70 max-w-xl text-sm md:text-base font-light leading-relaxed">
+                Mengenal sejarah panjang fondasi iman, filosofi arsitektur suci, serta tata kelola penggembalaan pastoral di Paroki Sancta Maria.
+            </p>
+        </div>
+    </header>
+
+    <!-- 2. CHURCH PROFILE SECTION -->
+    <section class="py-24 lg:py-32 max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div class="lg:col-span-5">
+                <div class="bg-white p-3 rounded-2xl border border-slate-100 shadow-subtleCard transform hover:scale-[1.01] transition duration-300">
+                    <div class="aspect-[4/5] rounded-xl overflow-hidden bg-slate-50 relative">
+                        <img src="https://images.unsplash.com/photo-1478147427282-58a87a120781?auto=format&fit=crop&q=80&w=1000" alt="Altar Utama Paroki Sancta Maria" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 space-y-6">
+                <div class="space-y-2">
+                    <span class="text-[11px] font-bold text-brandInteractive tracking-widest uppercase block">Profil Sejarah & Ruang</span>
+                    <h2 class="text-3xl lg:text-4xl font-heading font-bold text-brandPrimary leading-tight">
+                        Menjaga Tradisi Suci, Mewujudkan Paguyuban Umat Mandiri
+                    </h2>
+                </div>
+                
+                <div class="space-y-5 text-slate-600 font-light text-sm md:text-base leading-relaxed">
+                    <p>
+                        Berdiri kokoh sebagai saksi bisu perkembangan iman Katolik di wilayah ini, Paroki Sancta Maria didirikan berkat semangat misionaris awal yang berakar kuat pada nilai sakramental. Perjalanan sejarah paroki mencerminkan pertumbuhan spiritualitas umat dari sebuah stasi kecil hingga berkembang menjadi pusat paroki mandiri yang dinamis.
+                    </p>
+                    <p>
+                        <strong>Arsitektur dan Filosofi Bangunan</strong> dirancang secara matang dengan menggabungkan keanggunan garis modern serta elemen vertikal klasik yang menuntun pandangan batin manusia menuju transendensi Ilahi. Penggunaan ruang altar yang lapang, dipadukan dengan pancaran cahaya alami dari jendela kaca patri, menciptakan atmosfer liturgis yang hening, meditatif, dan khusyuk.
+                    </p>
+                    <p>
+                        Seiring berjalannya waktu, fokus utama paroki bergeser pada tata perkembangan paroki kontemporer: mendirikan basis komunitas lingkungan yang inklusif, memperkuat formasi iman berjenjang, serta mendorong keterlibatan sosial nyata yang membawa dampak positif bagi masyarakat luas di sekitar lingkungan gereja.
+                    </p>
+                </div>
+
+                <div class="border-l-4 border-brandInteractive pl-5 py-2 bg-white rounded-r-xl border border-slate-100 shadow-sm max-w-2xl">
+                    <p class="text-xs md:text-sm italic text-brandPrimary/90 font-medium">
+                        "Rumah Allah ini bukan sekadar susunan batu dan semen, melainkan tempat di mana bait Allah yang hidup — yaitu kita umat-Nya — berkumpul dan diutus."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. VISION & MISSION SECTION (Updated with User Mission Data) -->
+    <section class="bg-white py-24 lg:py-28 border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-2">
+                <span class="text-[11px] font-bold text-brandInteractive tracking-widest uppercase block">Arah Komunitas</span>
+                <h2 class="text-3xl font-heading font-bold text-brandPrimary">Visi dan Misi Paroki</h2>
+                <div class="w-10 h-[2px] bg-brandAccent mx-auto mt-3"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- Vision Highlight Container -->
+                <div class="lg:col-span-5 bg-brandBg p-8 lg:p-10 rounded-2xl border border-brandSoftAccent/20 relative overflow-hidden">
+                    <div class="w-10 h-10 bg-brandPrimary rounded-lg flex items-center justify-center text-white mb-6">
+                        <i class="fa-solid fa-compass text-sm text-brandSoftAccent"></i>
+                    </div>
+                    <span class="text-[10px] font-bold tracking-widest text-brandInteractive uppercase block mb-1">Visi Strategis</span>
+                    <h3 class="text-2xl font-heading font-bold text-brandPrimary mb-4">Umat Allah yang Berakar, Misioner, dan Berbela Rasa</h3>
+                    <p class="text-slate-600 text-xs md:text-sm font-light leading-relaxed">
+                        Menjadi persekutuan murid-murid Kristus yang dewasa dalam iman sakramental, inklusif dalam persaudaraan, serta aktif bergerak mewujudkan tanda-tanda Kerajaan Allah di tengah realitas sosial masyarakat plural.
+                    </p>
+                </div>
+
+                <!-- Mission Cards Column -->
+                <div class="lg:col-span-7 space-y-4">
+                    <span class="text-[10px] font-bold tracking-widest text-brandInteractive uppercase block pl-1 mb-2">Langkah Pelaksanaan (Misi)</span>
+                    
+                    <!-- Misi 1 -->
+                    <div class="bg-white border border-slate-100 hover:border-brandSoftAccent/60 p-5 rounded-xl flex gap-4 items-start shadow-subtleCard hover:shadow-subtleHover transition duration-200">
+                        <div class="w-7 h-7 rounded-lg bg-brandBg border border-slate-100 flex items-center justify-center shrink-0 text-brandPrimary mt-0.5">
+                            <i class="fa-solid fa-gloria text-xs text-brandInteractive">✝</i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-brandPrimary text-sm md:text-base mb-1">Liturgi yang Menghidupkan Iman</h4>
+                            <p class="text-xs md:text-sm text-slate-500 font-light leading-relaxed">Mengupayakan liturgi yang gembira dan menyentuh rasa perasaan religius umat dengan tetap memerhatikan kaidah-kaidah umum liturgi Gereja, sehingga dalam pengungkapan imannya umat mengalami dan merasakan kehadiran Tuhan.</p>
+                        </div>
+                    </div>
+
+                    <!-- Misi 2 -->
+                    <div class="bg-white border border-slate-100 hover:border-brandSoftAccent/60 p-5 rounded-xl flex gap-4 items-start shadow-subtleCard hover:shadow-subtleHover transition duration-200">
+                        <div class="w-7 h-7 rounded-lg bg-brandBg border border-slate-100 flex items-center justify-center shrink-0 text-brandPrimary mt-0.5">
+                            <i class="fa-solid fa-book-open text-xs text-brandInteractive"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-brandPrimary text-sm md:text-base mb-1">Pewartaan yang Relevan dan Mendalam</h4>
+                            <p class="text-xs md:text-sm text-slate-500 font-light leading-relaxed">Mengupayakan pewartaan yang relevan dengan situasi umat dan kebutuhan jaman, agar pengetahuan iman umat semakin mendalam dan penghayatan iman umat semakin tangguh.</p>
+                        </div>
+                    </div>
+
+                    <!-- Misi 3 -->
+                    <div class="bg-white border border-slate-100 hover:border-brandSoftAccent/60 p-5 rounded-xl flex gap-4 items-start shadow-subtleCard hover:shadow-subtleHover transition duration-200">
+                        <div class="w-7 h-7 rounded-lg bg-brandBg border border-slate-100 flex items-center justify-center shrink-0 text-brandPrimary mt-0.5">
+                            <i class="fa-solid fa-people-group text-xs text-brandInteractive"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-brandPrimary text-sm md:text-base mb-1">Persekutuan yang Guyub dan Peduli</h4>
+                            <p class="text-xs md:text-sm text-slate-500 font-light leading-relaxed">Mengupayakan persekutuan yang guyub-rukun bersatu, mampu berbelarasa dan berkorban dengan terlibat aktif menurut potensi, kemampuan dan kesempatan masing-masing.</p>
+                        </div>
+                    </div>
+
+                    <!-- Misi 4 -->
+                    <div class="bg-white border border-slate-100 hover:border-brandSoftAccent/60 p-5 rounded-xl flex gap-4 items-start shadow-subtleCard hover:shadow-subtleHover transition duration-200">
+                        <div class="w-7 h-7 rounded-lg bg-brandBg border border-slate-100 flex items-center justify-center shrink-0 text-brandPrimary mt-0.5">
+                            <i class="fa-solid fa-hand-holding-heart text-xs text-brandInteractive"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-brandPrimary text-sm md:text-base mb-1">Kepedulian Sosial bagi Sesama</h4>
+                            <p class="text-xs md:text-sm text-slate-500 font-light leading-relaxed">Mendorong umat agar semakin melibatkan diri dalam keprihatinan masyarakat dalam bidang sosmaspol agar kehadiran Gereja terwujud secara signifikan dan relevan terutama bagi kesejahteraan hidup kaum Kecil Lemah Miskin Tersingkir dan Difabel (KLMTD).</p>
+                        </div>
+                    </div>
+
+                    <!-- Misi 5 -->
+                    <div class="bg-white border border-slate-100 hover:border-brandSoftAccent/60 p-5 rounded-xl flex gap-4 items-start shadow-subtleCard hover:shadow-subtleHover transition duration-200">
+                        <div class="w-7 h-7 rounded-lg bg-brandBg border border-slate-100 flex items-center justify-center shrink-0 text-brandPrimary mt-0.5">
+                            <i class="fa-solid fa-database text-xs text-brandInteractive"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-brandPrimary text-sm md:text-base mb-1">Pastoral Berbasis Data dan Budaya Kasih</h4>
+                            <p class="text-xs md:text-sm text-slate-500 font-light leading-relaxed">Mewujudkan reksa pastoral berbasis data yang menggerakan umat untuk semakin peduli terhadap kebutuhan ciptaan dan melawan radikalisme agama melalui pembiasaan cara hidup yang peduli dan pembangunan budaya kasih.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. PASTOR PROFILE SECTION -->
+    <section class="py-24 lg:py-32 max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-2">
+            <span class="text-[11px] font-bold text-brandInteractive tracking-widest uppercase block">Dewan Penggembala</span>
+            <h2 class="text-3xl font-heading font-bold text-brandPrimary">Profil Pastoran Paroki</h2>
+            <div class="w-10 h-[2px] bg-brandAccent mx-auto mt-3"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
+            <div class="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-subtleCard hover:shadow-subtleHover transition duration-300 flex flex-col">
+                <div class="h-80 relative bg-slate-100 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=600" alt="Walterus Teguh Santosa, SJ" class="w-full h-full object-cover object-top opacity-95">
+                    <div class="absolute bottom-4 left-4 bg-brandPrimary text-brandSoftAccent text-[9px] uppercase font-bold tracking-widest px-3 py-1 rounded-md border border-white/10">
+                        Pastor Kepala Paroki
+                    </div>
+                </div>
+                <div class="p-6 lg:p-8 flex-1 flex flex-col justify-between space-y-6">
+                    <div class="space-y-3">
+                        <div>
+                            <h3 class="text-xl font-heading font-bold text-brandPrimary">Romo Walterus Teguh Santosa, SJ</h3>
+                            <p class="text-[11px] text-slate-400 font-semibold uppercase tracking-wider mt-0.5">Tahbisan: 2008 &bull; Serikat Jesus</p>
+                        </div>
+                        <p class="text-xs md:text-sm text-slate-600 font-light leading-relaxed">
+                            Mengemban reksa pastoral sebagai kepala paroki sejak tahun 2022. Memiliki fokus utama pada tata kelola administrasi gereja yang transparan, revitalisasi dewan pastoral, serta pendampingan iman keluarga.
+                        </p>
+                    </div>
+                    <div class="border-t border-slate-100 pt-4 space-y-2">
+                        <p class="text-xs italic text-brandInteractive font-medium">"Ad Maiorem Dei Gloriam — Semuanya demi Keagungan Allah yang Lebih Besar."</p>
+                        <p class="text-[11px] text-slate-500"><strong class="text-brandPrimary">Minat Pastoral:</strong> Liturgika, Formasi Teologi Awam, Pendampingan Komunitas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-subtleCard hover:shadow-subtleHover transition duration-300 flex flex-col">
+                <div class="h-80 relative bg-slate-100 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=600" alt="Antonius Bagas Prasetya" class="w-full h-full object-cover object-top opacity-95">
+                    <div class="absolute bottom-4 left-4 bg-brandInteractive text-white text-[9px] uppercase font-bold tracking-widest px-3 py-1 rounded-md">
+                        Pastor Rekan
+                    </div>
+                </div>
+                <div class="p-6 lg:p-8 flex-1 flex flex-col justify-between space-y-6">
+                    <div class="space-y-3">
+                        <div>
+                            <h3 class="text-xl font-heading font-bold text-brandPrimary">Romo Antonius Bagas Prasetya Adi Nugraha, SJ</h3>
+                            <p class="text-[11px] text-slate-400 font-semibold uppercase tracking-wider mt-0.5">Tahbisan: 2016 &bull; Serikat Jesus</p>
+                        </div>
+                        <p class="text-xs md:text-sm text-slate-600 font-light leading-relaxed">
+                            Diberikan tugas pastoral khusus dalam mendampingi pergerakan kaum muda (OMK), digitalisasi sistem informasi paroki, serta memimpin inisiatif ekologis penataan lingkungan hidup pastoral.
+                        </p>
+                    </div>
+                    <div class="border-t border-slate-100 pt-4 space-y-2">
+                        <p class="text-xs italic text-brandInteractive font-medium">"Menemukan Tuhan dan Kehendak-Nya dalam Segala Hal."</p>
+                        <p class="text-[11px] text-slate-500"><strong class="text-brandPrimary">Minat Pastoral:</strong> Retret Kaum Muda, Seni Musik Liturgi, Media Digital.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. PARISH DEVELOPMENT SECTION -->
+    <section class="bg-brandPrimary text-white py-24">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center mb-16">
+                <div class="lg:col-span-6 space-y-2">
+                    <span class="text-[11px] font-bold text-brandSoftAccent tracking-widest uppercase block">Sensus & Demografi</span>
+                    <h2 class="text-3xl font-heading font-bold leading-tight">Perkembangan Statistik Umat</h2>
+                </div>
+                <div class="lg:col-span-6 lg:border-l lg:border-white/10 lg:pl-8">
+                    <p class="text-white/60 text-xs md:text-sm font-light leading-relaxed">
+                        Data kuantitatif yang dihimpun melalui sensus digital paroki berkala untuk memastikan efektivitas reksa pastoral, distribusi pelayanan sakramen, serta perencanaan sarana prasarana iman secara akurat.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+                <div class="bg-white/5 border border-white/10 rounded-xl p-6 lg:p-8 backdrop-blur-sm">
+                    <div class="text-2xl lg:text-3xl font-heading font-bold text-brandSoftAccent mb-1">8.450</div>
+                    <div class="text-[10px] uppercase tracking-wider text-white/50 font-semibold">Jiwa Terdaftar</div>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-xl p-6 lg:p-8 backdrop-blur-sm">
+                    <div class="text-2xl lg:text-3xl font-heading font-bold text-brandSoftAccent mb-1">12</div>
+                    <div class="text-[10px] uppercase tracking-wider text-white/50 font-semibold">Wilayah Administratif</div>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-xl p-6 lg:p-8 backdrop-blur-sm">
+                    <div class="text-2xl lg:text-3xl font-heading font-bold text-brandSoftAccent mb-1">48</div>
+                    <div class="text-[10px] uppercase tracking-wider text-white/50 font-semibold">Lingkungan Komunitas</div>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-xl p-6 lg:p-8 backdrop-blur-sm">
+                    <div class="text-2xl lg:text-3xl font-heading font-bold text-brandSoftAccent mb-1">34%</div>
+                    <div class="text-[10px] uppercase tracking-wider text-white/50 font-semibold">Demografi OMK (Muda)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. OPERATIONAL INFORMATION SECTION -->
+    <section class="py-24 lg:py-32 max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div class="lg:col-span-5 space-y-6">
+                <div class="space-y-2">
+                    <span class="text-[11px] font-bold text-brandInteractive tracking-widest uppercase block">Kontak Sekretariat</span>
+                    <h2 class="text-3xl font-heading font-bold text-brandPrimary">Informasi Operasional</h2>
+                    <div class="w-10 h-[2px] bg-brandAccent mt-3"></div>
+                </div>
+                <p class="text-slate-600 text-xs md:text-sm font-light leading-relaxed">
+                    Segala urusan pendaftaran sakramen, permohonan surat keterangaan paroki, pencatatan intensi misa, maupun konsultasi pastoral terjadwal dapat dilayani melalui kantor sekretariat.
+                </p>
+
+                <div class="space-y-3 pt-2">
+                    <div class="flex gap-4 p-4 bg-white rounded-xl border border-slate-100 shadow-subtleCard">
+                        <div class="w-8 h-8 rounded-lg bg-brandBg flex items-center justify-center text-brandInteractive shrink-0 border border-slate-50">
+                            <i class="fa-solid fa-clock text-xs"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-[11px] font-bold uppercase tracking-wider text-brandPrimary mb-0.5">Jam Layanan Kantor</h4>
+                            <p class="text-xs md:text-sm text-slate-600 font-light">Selasa — Sabtu: 08.00 - 16.00 WIB</p>
+                            <p class="text-[11px] text-slate-400 mt-0.5 font-medium">Minggu: 08.00 - 12.00 WIB (Senin Tutup)</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 p-4 bg-white rounded-xl border border-slate-100 shadow-subtleCard">
+                        <div class="w-8 h-8 rounded-lg bg-brandBg flex items-center justify-center text-brandInteractive shrink-0 border border-slate-50">
+                            <i class="fa-solid fa-location-dot text-xs"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-[11px] font-bold uppercase tracking-wider text-brandPrimary mb-0.5">Alamat Fisik Gereja</h4>
+                            <p class="text-xs md:text-sm text-slate-600 font-light leading-relaxed">Jl. Katedral No. 10, Kel. Kotabaru, Kec. Gondokusuman, Kota Yogyakarta, DI Yogyakarta 55224</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 p-4 bg-white rounded-xl border border-slate-100 shadow-subtleCard">
+                        <div class="w-8 h-8 rounded-lg bg-brandBg flex items-center justify-center text-brandInteractive shrink-0 border border-slate-50">
+                            <i class="fa-solid fa-phone text-xs"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-[11px] font-bold uppercase tracking-wider text-brandPrimary mb-0.5">Saluran Komunikasi</h4>
+                            <p class="text-xs md:text-sm text-slate-600 font-light">(0274) 555-1234 &bull; sekretariat@parokisanctamaria.org</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 h-[380px] lg:h-[440px] bg-slate-100 rounded-2xl border border-slate-200 shadow-subtleCard overflow-hidden relative">
+                <div class="absolute inset-0 bg-slate-50 flex flex-col items-center justify-center text-center p-6">
+                    <div class="w-11 h-11 bg-white rounded-full flex items-center justify-center shadow-sm text-brandInteractive mb-3 border border-slate-100">
+                        <i class="fa-solid fa-map-location-dot text-base"></i>
+                    </div>
+                    <span class="text-sm font-semibold text-brandPrimary">Peta Penunjuk Lokasi Kompleks</span>
+                    <span class="text-xs text-slate-400 max-w-xs mt-1 font-light">Lokasi paroki terintegrasi pusat kota. Akses parkir luas tersedia melalui gerbang selatan kompleks pastoral.</span>
+                    <a href="https://maps.google.com" target="_blank" class="mt-4 bg-brandPrimary hover:bg-brandInteractive text-white text-xs font-bold px-4 py-2.5 rounded-lg transition duration-200 tracking-wider uppercase">
+                        Buka Google Maps
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. MINIMAL SOCIAL MEDIA SECTION -->
+    <section class="bg-white py-12 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="text-center sm:text-left">
+                <h4 class="text-xs md:text-sm font-bold text-brandPrimary uppercase tracking-wider">Terhubung dalam Jaringan Komunitas Digital</h4>
+                <p class="text-xs text-slate-400 font-light mt-0.5">Akses berkala info pastoral harian, dokumentasi perayaan misa, serta renungan rohani batin.</p>
+            </div>
+            <div class="flex items-center gap-2.5">
+                <a href="#" class="w-9 h-9 rounded-lg bg-brandBg hover:bg-brandSoftAccent/30 border border-slate-200/80 text-brandPrimary flex items-center justify-center transition duration-200" aria-label="YouTube">
+                    <i class="fa-brands fa-youtube text-sm"></i>
+                </a>
+                <a href="#" class="w-9 h-9 rounded-lg bg-brandBg hover:bg-brandSoftAccent/30 border border-slate-200/80 text-brandPrimary flex items-center justify-center transition duration-200" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram text-sm"></i>
+                </a>
+                <a href="#" class="w-9 h-9 rounded-lg bg-brandBg hover:bg-brandSoftAccent/30 border border-slate-200/80 text-brandPrimary flex items-center justify-center transition duration-200" aria-label="Spotify">
+                    <i class="fa-brands fa-spotify text-sm"></i>
+                </a>
+                <a href="#" class="w-9 h-9 rounded-lg bg-brandBg hover:bg-brandSoftAccent/30 border border-slate-200/80 text-brandPrimary flex items-center justify-center transition duration-200" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. FOOTER SECTION -->
+    <footer class="bg-brandPrimary text-white pt-16 pb-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 items-start mb-12">
+            <div class="md:col-span-5 space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 bg-white/10 rounded-xl flex items-center justify-center border border-white/10">
+                        <i class="fa-solid fa-cross text-brandSoftAccent text-sm"></i>
+                    </div>
+                    <span class="font-heading font-bold text-lg tracking-wide">Paroki Sancta Maria</span>
+                </div>
+                <p class="text-white/50 text-xs font-light leading-relaxed max-w-sm">
+                    Gereja Katolik Roma resmi di bawah naungan Keuskupan Agung. Berkomitmen menumbuhkan paguyuban murid Kristus yang misioner dan membawa berkat melimpah bagi lingkungan.
+                </p>
+            </div>
+
+            <div class="md:col-span-3 space-y-3">
+                <h5 class="text-[10px] uppercase font-bold tracking-widest text-brandSoftAccent">Tautan Cepat</h5>
+                <ul class="space-y-2 text-xs text-white/60 font-light">
+                    <li><a href="#" class="hover:text-white transition">Dewan Pastoral Paroki</a></li>
+                    <li><a href="#" class="hover:text-white transition">Layanan Pengakuan Dosa</a></li>
+                    <li><a href="#" class="hover:text-white transition">Kursus Persiapan Perkawinan</a></li>
+                    <li><a href="#" class="hover:text-white transition">Formulir Pendaftaran Umat Baru</a></li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-4 space-y-3">
+                <h5 class="text-[10px] uppercase font-bold tracking-widest text-brandSoftAccent">Kantor Paroki</h5>
+                <p class="text-xs text-white/60 font-light leading-relaxed">
+                    Gedung Sekretariat Pastoral Lantai I<br>
+                    Jl. Katedral No. 10, Yogyakarta, Indonesia<br>
+                    Kontak Utama: info@parokisanctamaria.org
+                </p>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-white/40 font-light">
+            <p>&copy; 2026 Paroki Sancta Maria. Seluruh Hak Cipta Dilindungi Undang-Undang.</p>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-white/60 transition">Kebijakan Privasi</a>
+                <a href="#" class="hover:text-white/60 transition">Ketentuan Layanan</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

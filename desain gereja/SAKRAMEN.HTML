@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelayanan Sakramental - Paroki St. Antonius Padua Purbayan Surakarta</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0b2c3d;
+            --primary-light: #15425c;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --font-serif: 'Cinzel', Georgia, serif;
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: var(--font-sans); color: var(--text-dark); background-color: var(--white); line-height: 1.6; }
+        
+        /* Typography Rules */
+        h1, h2, h3, .font-serif { font-family: var(--font-serif); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; border-radius: 8px; font-weight: 500; text-decoration: none; transition: var(--transition); font-size: 0.9rem; cursor: pointer; }
+        .btn-primary { background-color: var(--primary); color: var(--white); border: 1px solid var(--primary); }
+        .btn-primary:hover { background-color: var(--primary-light); }
+        .btn-outline { background-color: transparent; color: var(--primary); border: 1px solid var(--primary); }
+        .btn-outline:hover { background-color: #f1f5f9; }
+
+        /* SECTION 1 — HERO */
+        .hero { position: relative; background: url('https://images.unsplash.com/photo-1548625361-155defe219fa?q=80&w=1920') no-repeat center center/cover; padding: 160px 0 100px; color: var(--white); }
+        .hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(11, 44, 61, 0.92), rgba(11, 44, 61, 0.85)); }
+        .hero-content { position: relative; z-index: 10; max-width: 700px; }
+        .breadcrumbs { display: flex; gap: 8px; font-size: 0.85rem; opacity: 0.8; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 1px; }
+        .breadcrumbs a { color: var(--white); text-decoration: none; }
+        .breadcrumbs span { color: rgba(255,255,255,0.5); }
+        .hero-label { font-size: 0.9rem; letter-spacing: 3px; text-transform: uppercase; color: #cbd5e1; font-weight: 600; margin-bottom: 12px; display: block; }
+        .hero h1 { font-size: 3.5rem; font-weight: 600; line-height: 1.2; margin-bottom: 16px; }
+        .hero-subtitle { font-size: 1.2rem; opacity: 0.9; font-weight: 400; color: #e2e8f0; }
+
+        /* SECTION 2 — INTRODUCTION */
+        .intro { padding: 100px 0; background-color: var(--white); }
+        .intro-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center; }
+        .intro-left h2 { font-size: 2.2rem; color: var(--primary); margin-bottom: 24px; position: relative; padding-bottom: 16px; }
+        .intro-left h2::after { content: ''; position: absolute; bottom: 0; left: 0; width: 60px; height: 3px; background-color: var(--primary); }
+        .intro-left p { color: var(--text-muted); font-size: 1.15rem; line-height: 1.8; }
+        .intro-right img { width: 100%; height: 380px; object-fit: cover; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+
+        /* SECTION 3 — SAKRAMEN DIRECTORY */
+        .directory { padding: 100px 0; background-color: var(--bg-light); }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 16px; }
+        .directory-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
+        .sacrament-card { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02); border: 1px solid #e2e8f0; transition: var(--transition); display: flex; flex-direction: column; }
+        .sacrament-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(11, 44, 61, 0.06); }
+        .card-image-wrapper { position: relative; height: 260px; overflow: hidden; }
+        .card-image-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+        .sacrament-card:hover .card-image-wrapper img { transform: scale(1.04); }
+        .card-content { padding: 32px; flex-grow: 1; display: flex; flex-direction: column; }
+        .card-content h3 { font-size: 1.6rem; color: var(--primary); margin-bottom: 12px; }
+        .card-content p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px; flex-grow: 1; }
+        .card-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+        /* SECTION 4 — ALUR PELAYANAN */
+        .timeline-section { padding: 100px 0; background-color: var(--white); }
+        .timeline-container { display: flex; justify-content: space-between; position: relative; margin-top: 60px; }
+        .timeline-container::before { content: ''; position: absolute; top: 35px; left: 5%; right: 5%; height: 2px; background-color: #e2e8f0; z-index: 1; }
+        .timeline-step { text-align: center; width: 22%; position: relative; z-index: 2; }
+        .step-number { width: 70px; height: 70px; background-color: var(--white); border: 2px solid var(--primary); color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-family: var(--font-serif); font-size: 1.5rem; font-weight: bold; transition: var(--transition); }
+        .timeline-step:hover .step-number { background-color: var(--primary); color: var(--white); }
+        .timeline-step h4 { font-size: 1.15rem; color: var(--primary); margin-bottom: 8px; }
+        .timeline-step p { font-size: 0.9rem; color: var(--text-muted); padding: 0 8px; }
+
+        /* SECTION 5 — INFORMASI PELAYANAN */
+        .info-section { padding: 100px 0; background-color: var(--bg-light); }
+        .info-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .info-card { background: var(--white); padding: 32px; border-radius: 16px; border: 1px solid #e2e8f0; transition: var(--transition); }
+        .info-card:hover { border-color: var(--primary); }
+        .info-icon { font-size: 1.8rem; margin-bottom: 20px; color: var(--primary); display: block; }
+        .info-card h4 { font-size: 1.1rem; color: var(--primary); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .info-card p { font-size: 0.95rem; color: var(--text-dark); white-space: pre-line; }
+
+        /* SECTION 6 — QUOTE SECTION */
+        .quote-section { background-color: var(--primary); padding: 120px 0; color: var(--white); text-align: center; position: relative; }
+        .quote-container { max-width: 800px; margin: 0 auto; }
+        .quote-text { font-family: var(--font-serif); font-size: 2.2rem; font-style: italic; line-height: 1.5; margin-bottom: 24px; position: relative; }
+        .quote-author { font-size: 1rem; letter-spacing: 2px; text-transform: uppercase; color: #cbd5e1; opacity: 0.8; }
+
+        /* SECTION 7 — FOOTER */
+        footer { background-color: #061b26; color: rgba(255,255,255,0.7); padding: 60px 0 30px; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.05); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 60px; margin-bottom: 40px; }
+        .footer-left h3 { font-size: 1.3rem; color: var(--white); margin-bottom: 16px; }
+        .footer-links { display: flex; gap: 32px; }
+        .footer-links a { color: rgba(255,255,255,0.7); text-decoration: none; transition: var(--transition); }
+        .footer-links a:hover { color: var(--white); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 30px; display: flex; justify-content: space-between; font-size: 0.85rem; }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1024px) {
+            .intro-grid { grid-template-columns: 1fr; gap: 40px; }
+            .directory-grid { grid-template-columns: 1fr; }
+            .info-grid { grid-template-columns: repeat(2, 1fr); }
+            .timeline-container { flex-direction: column; gap: 40px; }
+            .timeline-container::before { display: none; }
+            .timeline-step { width: 100%; text-align: left; display: flex; gap: 24px; align-items: flex-start; }
+            .step-number { margin: 0; flex-shrink: 0; }
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .info-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+            .footer-links { flex-direction: column; gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SECTION 1 — HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <nav class="breadcrumbs">
+                    <a href="#">Beranda</a> <span>/</span> <a href="#">Pelayanan</a> <span>/</span> <a href="#">Sakramen</a>
+                </nav>
+                <span class="hero-label">Pelayanan Umat</span>
+                <h1>Pelayanan Sakramental</h1>
+                <p class="hero-subtitle">Mendampingi umat dalam perjalanan iman melalui sakramen-sakramen Gereja Katolik.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2 — INTRODUCTION -->
+    <section class="intro">
+        <div class="container">
+            <div class="intro-grid">
+                <div class="intro-left">
+                    <h2>Rahmat Tuhan di Setiap Langkah Hidup</h2>
+                    <p>Sakramen merupakan tanda kehadiran Allah yang menyertai umat dalam setiap tahap kehidupan, mulai dari baptisan hingga penguatan iman. Melalui pelayanan ini, Paroki St. Antonius Padua Purbayan berkomitmen mengalirkan berkat rohani dan meneguhkan persekutuan jemaat.</p>
+                </div>
+                <div class="intro-right">
+                    <img src="https://images.unsplash.com/photo-1545128485-c400e7702796?q=80&w=800" alt="Interior Gereja Purbayan">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3 — SAKRAMEN DIRECTORY -->
+    <section class="directory">
+        <div class="container">
+            <div class="section-header">
+                <h2>Direktori Sakramen</h2>
+            </div>
+            <div class="directory-grid">
+                <!-- Card 1 -->
+                <div class="sacrament-card">
+                    <div class="card-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1560141343-966cb5212777?q=80&w=800" alt="Sakramen Baptis Bayi">
+                    </div>
+                    <div class="card-content">
+                        <h3>Sakramen Baptis Bayi</h3>
+                        <p>Pendampingan bagi orang tua yang ingin membaptiskan putra-putrinya dalam Gereja Katolik sebagai pembersihan dari dosa asal dan integrasi ke dalam tubuh mistik Kristus.</p>
+                        <div class="card-actions">
+                            <a href="#" class="btn btn-outline">Lihat Persyaratan</a>
+                            <a href="#" class="btn btn-primary">Daftar Pelayanan</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="sacrament-card">
+                    <div class="card-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?q=80&w=800" alt="Sakramen Baptis Dewasa">
+                    </div>
+                    <div class="card-content">
+                        <h3>Sakramen Baptis Dewasa</h3>
+                        <p>Inisiasi penuh bagi para katekumen yang telah menyelesaikan masa katekese untuk menerima rahmat iman baru dan menjadi anggota penuh Gereja.</p>
+                        <div class="card-actions">
+                            <a href="#" class="btn btn-outline">Lihat Persyaratan</a>
+                            <a href="#" class="btn btn-primary">Daftar Pelayanan</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="sacrament-card">
+                    <div class="card-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1471108331818-495244b7f7fc?q=80&w=800" alt="Sakramen Ekaristi">
+                    </div>
+                    <div class="card-content">
+                        <h3>Sakramen Ekaristi</h3>
+                        <p>Penerimaan Tubuh dan Darah Kristus (Komuni Kudus) untuk pertama kali bagi anak-anak yang telah memenuhi syarat usia dan pemahaman iman.</p>
+                        <div class="card-actions">
+                            <a href="#" class="btn btn-outline">Lihat Persyaratan</a>
+                            <a href="#" class="btn btn-primary">Daftar Pelayanan</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="sacrament-card">
+                    <div class="card-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1543165796-540007eaac26?q=80&w=800" alt="Sakramen Penguatan">
+                    </div>
+                    <div class="card-content">
+                        <h3>Sakramen Penguatan</h3>
+                        <p>Penyempurnaan rahmat baptis melalui pencurahan Roh Kudus yang mendewasakan iman umat untuk siap menjadi saksi Kristus di dunia.</p>
+                        <div class="card-actions">
+                            <a href="#" class="btn btn-outline">Lihat Persyaratan</a>
+                            <a href="#" class="btn btn-primary">Daftar Pelayanan</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="sacrament-card">
+                    <div class="card-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1515600389256-102b47af6c22?q=80&w=800" alt="Sakramen Tobat">
+                    </div>
+                    <div class="card-content">
+                        <h3>Sakramen Tobat</h3>
+                        <p>Pemberian absolusi dosa dan rekonsiliasi umat dengan Allah serta Gereja demi memulihkan rahmat pengudusan yang hilang.</p>
+                        <div class="card-actions">
+                            <a href="#" class="btn btn-outline">Lihat Persyaratan</a>
+                            <a href="#" class="btn btn-primary">Daftar Pelayanan</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="sacrament-card">
+                    <div class="card-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800" alt="Sakramen Perkawinan">
+                    </div>
+                    <div class="card-content">
+                        <h3>Sakramen Perkawinan</h3>
+                        <p>Pengikatan janji suci antara seorang pria dan wanita Katolik untuk membentuk persekutuan hidup dan kasih yang tak terutuskan.</p>
+                        <div class="card-actions">
+                            <a href="#" class="btn btn-outline">Lihat Persyaratan</a>
+                            <a href="#" class="btn btn-primary">Daftar Pelayanan</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4 — ALUR PELAYANAN -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Alur Pelayanan</h2>
+            </div>
+            <div class="timeline-container">
+                <div class="timeline-step">
+                    <div class="step-number">I</div>
+                    <div>
+                        <h4>Persiapan Dokumen</h4>
+                        <p>Lengkapi berkas administrasi sesuai sakramen yang dituju.</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-number">II</div>
+                    <div>
+                        <h4>Pendaftaran</h4>
+                        <p>Serahkan berkas ke sekretariat paroki atau daftar secara daring.</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-number">III</div>
+                    <div>
+                        <h4>Pendampingan</h4>
+                        <p>Mengikuti katekese atau rekoleksi persiapan sakramen.</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-number">IV</div>
+                    <div>
+                        <h4>Pelaksanaan Sakramen</h4>
+                        <p>Penerimaan sakramen pada jadwal liturgi yang ditentukan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5 — INFORMASI PELAYANAN -->
+    <section class="info-section">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card">
+                    <span class="info-icon">🕒</span>
+                    <h4>Jam Pelayanan</h4>
+                    <p>Selasa – Sabtu
+08.00 – 15.00 WIB
+
+Minggu
+09.00 – 12.00 WIB</p>
+                </div>
+                <div class="info-card">
+                    <span class="info-icon">📍</span>
+                    <h4>Lokasi Sekretariat</h4>
+                    <p>Jl. Arifin No. 1, Kampung Baru, Kec. Pasar Kliwon, Kota Surakarta, Jawa Tengah 57133</p>
+                </div>
+                <div class="info-card">
+                    <span class="info-icon">💬</span>
+                    <h4>Kontak Admin</h4>
+                    <p>WhatsApp Sekretariat:
++62 812-3456-7890
+(Hanya pesan teks)</p>
+                </div>
+                <div class="info-card">
+                    <span class="info-icon">📄</span>
+                    <h4>Persyaratan Umum</h4>
+                    <p>• Surat Pengantar Lingkungan
+• Fotokopi Surat Baptis terbaru
+• Kartu Keluarga Paroki</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6 — QUOTE SECTION -->
+    <section class="quote-section">
+        <div class="container">
+            <div class="quote-container">
+                <p class="quote-text">“Sakramen adalah tanda kasih Allah yang menyertai umat dalam perjalanan hidup dan iman.”</p>
+                <p class="quote-author">Paroki St. Antonius Padua Purbayan</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7 — FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-left">
+                    <h3>Paroki St. Antonius Padua Purbayan Surakarta</h3>
+                    <p style="margin-top: 12px; opacity: 0.8;">Menjadi saksi kasih Kristus yang inklusif dan transformatif di tengah masyarakat Solo.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Beranda</a>
+                    <a href="#">Profil Gereja</a>
+                    <a href="#">Sejarah Gereja</a>
+                    <a href="#">Wilayah dan Lingkungan</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Paroki St. Antonius Padua Purbayan. All Rights Reserved.</p>
+                <p>Ad Maiorem Dei Gloriam</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

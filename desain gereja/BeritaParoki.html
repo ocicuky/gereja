@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Berita Paroki — St. Antonius Padua Purbayan Surakarta</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0b2c3d;
+  --accent:#2a9bc0;
+  --accent-dark:#1a7a9e;
+  --bg:#f8fafc;
+  --surface:#ffffff;
+  --text-primary:#0f1923;
+  --text-secondary:#4a5568;
+  --text-muted:#8898aa;
+  --border:#e2e8f0;
+  --border-light:#f1f5f9;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text-primary);line-height:1.6}
+
+/* NAV */
+nav{background:var(--navy);padding:0 2rem;position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo{width:40px;height:40px;border-radius:50%;background:rgba(42,155,192,.25);border:2px solid rgba(42,155,192,.5);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#fff}
+.nav-name{color:#fff;font-size:13px;font-weight:500;line-height:1.3;max-width:160px}
+.nav-name span{display:block;color:rgba(255,255,255,.55);font-size:11px;font-weight:400}
+.nav-links{display:flex;align-items:center;gap:1.5rem}
+.nav-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:13px;font-weight:400;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-links a.active{color:var(--accent);font-weight:500}
+.nav-cta{background:var(--accent);color:#fff;padding:8px 16px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:500;transition:background .2s}
+.nav-cta:hover{background:var(--accent-dark)}
+
+/* HERO */
+.hero{position:relative;height:520px;background:var(--navy);overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:
+  linear-gradient(to bottom right, rgba(11,44,61,.85) 0%, rgba(11,44,61,.7) 60%, rgba(42,155,192,.15) 100%),
+  url('https://images.unsplash.com/photo-1508979780518-07e2f5ba25e6?w=1400&q=80') center/cover no-repeat}
+.hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 2rem;height:100%;display:flex;flex-direction:column;justify-content:center}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(42,155,192,.2);border:1px solid rgba(42,155,192,.4);color:var(--accent);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:1.25rem}
+.hero-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(40px,6vw,72px);font-weight:700;color:#fff;line-height:1.05;margin-bottom:1rem;letter-spacing:-.02em}
+.hero-subtitle{color:rgba(255,255,255,.72);font-size:16px;font-weight:300;max-width:560px;line-height:1.7;margin-bottom:2rem}
+.hero-stats{display:flex;align-items:center;gap:2rem}
+.hero-stat{display:flex;flex-direction:column}
+.hero-stat-num{font-size:28px;font-weight:700;color:#fff;line-height:1;font-variant-numeric:tabular-nums}
+.hero-stat-label{font-size:12px;color:rgba(255,255,255,.5);font-weight:400;margin-top:2px}
+.hero-divider{width:1px;height:40px;background:rgba(255,255,255,.2)}
+.hero-scroll{position:absolute;bottom:2rem;right:2rem;color:rgba(255,255,255,.4);font-size:12px;display:flex;align-items:center;gap:8px}
+.hero-scroll-line{width:40px;height:1px;background:rgba(255,255,255,.3)}
+
+/* SECTION WRAPPER */
+section{padding:4rem 2rem}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-header{margin-bottom:2.5rem}
+.section-label{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(24px,3vw,36px);font-weight:700;color:var(--navy);line-height:1.15;letter-spacing:-.02em}
+.section-line{display:flex;align-items:center;gap:1rem;margin-top:1rem}
+.section-line span{height:2px;background:var(--accent);display:block}
+.section-line span:first-child{width:32px}
+.section-line span:last-child{width:16px;opacity:.4}
+
+/* FEATURED */
+.featured-section{background:var(--surface)}
+.featured-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:16px;overflow:hidden;box-shadow:0 8px 48px rgba(11,44,61,.12)}
+.featured-image{position:relative;min-height:420px;background:#0b2c3d}
+.featured-image img{width:100%;height:100%;object-fit:cover;display:block}
+.featured-image-overlay{position:absolute;inset:0;background:linear-gradient(to right, rgba(11,44,61,.15), transparent)}
+.featured-category-badge{position:absolute;top:1.25rem;left:1.25rem;background:var(--accent);color:#fff;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:20px}
+.featured-content{padding:3rem;display:flex;flex-direction:column;justify-content:center;background:var(--surface)}
+.featured-meta{display:flex;align-items:center;gap:12px;margin-bottom:1rem}
+.featured-date{font-size:12px;color:var(--text-muted);display:flex;align-items:center;gap:6px}
+.featured-dot{width:3px;height:3px;border-radius:50%;background:var(--text-muted)}
+.featured-read{font-size:12px;color:var(--text-muted)}
+.featured-title{font-family:'Playfair Display',serif;font-size:clamp(22px,2.5vw,32px);font-weight:700;color:var(--navy);line-height:1.25;margin-bottom:1rem;letter-spacing:-.02em}
+.featured-excerpt{font-size:15px;color:var(--text-secondary);line-height:1.75;margin-bottom:2rem}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:500;transition:all .25s;border:none;cursor:pointer}
+.btn-primary:hover{background:var(--accent);transform:translateY(-1px)}
+.btn-primary .arrow{transition:transform .25s}
+.btn-primary:hover .arrow{transform:translateX(4px)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--navy);padding:11px 22px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:500;border:1.5px solid var(--navy);transition:all .25s;cursor:pointer}
+.btn-outline:hover{background:var(--navy);color:#fff}
+
+/* HIGHLIGHT */
+.highlight-section{background:var(--bg)}
+.highlight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.h-card{background:var(--surface);border-radius:16px;overflow:hidden;box-shadow:0 2px 20px rgba(11,44,61,.07);transition:all .3s;border:1px solid var(--border-light)}
+.h-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(11,44,61,.14)}
+.h-card-img{position:relative;height:200px;overflow:hidden}
+.h-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.h-card:hover .h-card-img img{transform:scale(1.04)}
+.h-card-cat{position:absolute;bottom:12px;left:12px;background:var(--navy);color:#fff;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:12px}
+.h-card-body{padding:1.25rem}
+.h-card-date{font-size:11px;color:var(--text-muted);margin-bottom:.5rem}
+.h-card-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--navy);line-height:1.35;margin-bottom:.6rem;letter-spacing:-.01em}
+.h-card-excerpt{font-size:13px;color:var(--text-secondary);line-height:1.65}
+
+/* FILTER */
+.filter-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.filter-section section{padding:1.5rem 2rem}
+.filter-wrap{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.filter-label{font-size:12px;color:var(--text-muted);font-weight:500;margin-right:4px}
+.chip{display:inline-flex;align-items:center;padding:7px 16px;border-radius:20px;font-size:13px;font-weight:500;cursor:pointer;border:1.5px solid var(--border);color:var(--text-secondary);background:transparent;transition:all .2s;text-decoration:none}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+.chip.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+/* NEWS GRID */
+.news-section{background:var(--bg)}
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.n-card{background:var(--surface);border-radius:16px;overflow:hidden;border:1px solid var(--border-light);box-shadow:0 2px 16px rgba(11,44,61,.05);transition:all .3s}
+.n-card:hover{transform:translateY(-3px);box-shadow:0 10px 36px rgba(11,44,61,.12);border-color:rgba(42,155,192,.2)}
+.n-card-img{height:180px;overflow:hidden;position:relative}
+.n-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.n-card:hover .n-card-img img{transform:scale(1.05)}
+.n-card-body{padding:1.25rem}
+.n-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem}
+.n-card-cat{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:rgba(42,155,192,.08);padding:4px 10px;border-radius:10px}
+.n-card-date{font-size:11px;color:var(--text-muted)}
+.n-card-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--navy);line-height:1.35;margin-bottom:.6rem;letter-spacing:-.01em}
+.n-card-desc{font-size:13px;color:var(--text-secondary);line-height:1.65;margin-bottom:1rem}
+.n-card-link{display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-size:13px;font-weight:600;text-decoration:none;transition:gap .2s}
+.n-card-link:hover{gap:10px}
+.load-more-wrap{text-align:center;margin-top:3rem}
+
+/* NEWSLETTER */
+.newsletter-section{background:var(--navy);padding:5rem 2rem}
+.newsletter-inner{max-width:600px;margin:0 auto;text-align:center}
+.newsletter-eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
+.newsletter-title{font-family:'Playfair Display',serif;font-size:clamp(24px,3vw,38px);font-weight:700;color:#fff;line-height:1.2;margin-bottom:1rem;letter-spacing:-.02em}
+.newsletter-desc{color:rgba(255,255,255,.65);font-size:15px;line-height:1.7;margin-bottom:2rem}
+.newsletter-form{display:flex;gap:12px;max-width:460px;margin:0 auto}
+.newsletter-input{flex:1;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.2);color:#fff;padding:13px 18px;border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;outline:none;transition:border-color .2s}
+.newsletter-input::placeholder{color:rgba(255,255,255,.4)}
+.newsletter-input:focus{border-color:var(--accent)}
+.newsletter-btn{background:var(--accent);color:#fff;border:none;padding:13px 22px;border-radius:8px;font-size:14px;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;transition:background .2s;white-space:nowrap}
+.newsletter-btn:hover{background:#1f86a8}
+.newsletter-privacy{font-size:11px;color:rgba(255,255,255,.35);margin-top:1rem}
+
+/* TIMELINE */
+.timeline-section{background:var(--surface)}
+.timeline-wrap{position:relative;padding-left:2rem}
+.timeline-wrap::before{content:'';position:absolute;left:7px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom, var(--accent) 0%, var(--border) 100%)}
+.timeline-item{position:relative;padding-bottom:2rem}
+.timeline-item:last-child{padding-bottom:0}
+.timeline-dot{position:absolute;left:-2rem;top:4px;width:16px;height:16px;border-radius:50%;background:var(--accent);border:3px solid var(--surface);z-index:1}
+.timeline-item.secondary .timeline-dot{background:var(--border);border-color:var(--surface)}
+.timeline-date{font-size:11px;color:var(--text-muted);font-weight:500;letter-spacing:.04em;margin-bottom:.25rem}
+.timeline-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--navy);margin-bottom:.25rem}
+.timeline-desc{font-size:13px;color:var(--text-secondary);line-height:1.6}
+.timeline-tag{display:inline-flex;align-items:center;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:10px;margin-top:.4rem}
+.timeline-tag.green{background:rgba(34,197,94,.1);color:#16a34a}
+.timeline-tag.blue{background:rgba(42,155,192,.1);color:var(--accent-dark)}
+.timeline-tag.orange{background:rgba(249,115,22,.1);color:#ea580c}
+.timeline-cols{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+
+/* FOOTER */
+footer{background:#071e2b;color:rgba(255,255,255,.7);padding:4rem 2rem 0}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.footer-brand .nav-brand{margin-bottom:1rem}
+.footer-desc{font-size:13px;line-height:1.75;color:rgba(255,255,255,.5);margin-bottom:1.5rem}
+.footer-contact{font-size:13px;color:rgba(255,255,255,.55);line-height:1.8}
+.footer-contact strong{color:rgba(255,255,255,.8);display:block;margin-bottom:.25rem}
+.footer-col-title{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1.25rem}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:.65rem}
+.footer-links a{color:rgba(255,255,255,.55);text-decoration:none;font-size:13px;transition:color .2s}
+.footer-links a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding:1.5rem 0;display:flex;align-items:center;justify-content:space-between}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.3)}
+.footer-badges{display:flex;gap:8px}
+.footer-badge{width:28px;height:28px;border-radius:6px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s}
+.footer-badge:hover{background:rgba(42,155,192,.3)}
+.footer-badge svg{width:14px;height:14px;fill:rgba(255,255,255,.5)}
+
+/* UTILS */
+.tag{display:inline-flex;align-items:center;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:12px;background:rgba(42,155,192,.12);color:var(--accent)}
+.divider{height:1px;background:var(--border);margin:2rem 0}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="#">
+      <div class="nav-logo">SA</div>
+      <div class="nav-name">Paroki St. Antonius Padua <span>Purbayan Surakarta</span></div>
+    </a>
+    <div class="nav-links">
+      <a href="#">Beranda</a>
+      <a href="#">Tentang Gereja</a>
+      <a href="#">Lingkungan &amp; Tim</a>
+      <a href="#">Pelayanan Sakramental</a>
+      <a href="#" class="active">Berita Paroki</a>
+      <a href="#" class="nav-cta">Kontak</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Informasi Paroki</div>
+    <h1>Berita Paroki</h1>
+    <p class="hero-subtitle">Informasi terbaru mengenai kegiatan, pelayanan, peristiwa penting, dan kehidupan umat Paroki St. Antonius Padua Purbayan.</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-num">142</span>
+        <span class="hero-stat-label">Total Artikel</span>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">8</span>
+        <span class="hero-stat-label">Kategori</span>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">2026</span>
+        <span class="hero-stat-label">Tahun Aktif</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span class="hero-scroll-line"></span>
+    Gulir ke bawah
+  </div>
+</div>
+
+<!-- FEATURED -->
+<section class="featured-section" style="background:var(--surface)">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">Berita Utama</div>
+      <h2 class="section-title">Sorotan Terkini</h2>
+      <div class="section-line"><span></span><span></span></div>
+    </div>
+    <div class="featured-grid">
+      <div class="featured-image">
+        <img src="https://images.unsplash.com/photo-1438032005730-c779502df39b?w=800&q=80" alt="Misa Syukur HUT Paroki">
+        <div class="featured-image-overlay"></div>
+        <span class="featured-category-badge">Liturgi</span>
+      </div>
+      <div class="featured-content">
+        <div class="featured-meta">
+          <span class="featured-date">📅 15 Juni 2026</span>
+          <span class="featured-dot"></span>
+          <span class="featured-read">6 menit baca</span>
+        </div>
+        <h2 class="featured-title">Misa Syukur HUT ke-90 Paroki St. Antonius Padua Purbayan Surakarta</h2>
+        <p class="featured-excerpt">Dalam suasana penuh syukur dan sukacita, seluruh umat Paroki St. Antonius Padua Purbayan berkumpul untuk merayakan Misa Syukur memperingati Hari Ulang Tahun Paroki ke-90. Perayaan ekaristi yang khidmat ini dipersembahkan oleh Romo Paroki dan dihadiri ribuan umat dari berbagai wilayah dan lingkungan.</p>
+        <a href="#" class="btn-primary">Baca Selengkapnya <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section style="background:var(--bg);padding:4rem 2rem">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">Pilihan Editor</div>
+      <h2 class="section-title">Berita Pilihan</h2>
+      <div class="section-line"><span></span><span></span></div>
+    </div>
+    <div class="highlight-grid">
+      <div class="h-card">
+        <div class="h-card-img">
+          <img src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?w=600&q=80" alt="Pembinaan Ketua Lingkungan">
+          <span class="h-card-cat">Kegiatan Umat</span>
+        </div>
+        <div class="h-card-body">
+          <div class="h-card-date">12 Juni 2026</div>
+          <h3 class="h-card-title">Pembinaan Ketua Lingkungan dan Tim Pastoral 2025–2026</h3>
+          <p class="h-card-excerpt">Paroki menyelenggarakan pembinaan rutin bagi seluruh ketua lingkungan dan tim pastoral sebagai bentuk penguatan pelayanan umat.</p>
+        </div>
+      </div>
+      <div class="h-card">
+        <div class="h-card-img">
+          <img src="https://images.unsplash.com/photo-1509281373149-e957c6296406?w=600&q=80" alt="Seminar Perkawinan">
+          <span class="h-card-cat">Pendidikan</span>
+        </div>
+        <div class="h-card-body">
+          <div class="h-card-date">8 Juni 2026</div>
+          <h3 class="h-card-title">Seminar "Memahami Hukum Perkawinan yang Sejati" Dihadiri 200 Peserta</h3>
+          <p class="h-card-excerpt">Paroki bekerja sama dengan Tim Keluarga Keuskupan mengadakan seminar yang menyentuh berbagai aspek perkawinan Kristiani.</p>
+        </div>
+      </div>
+      <div class="h-card">
+        <div class="h-card-img">
+          <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80" alt="Bantuan Sosial">
+          <span class="h-card-cat">Sosial</span>
+        </div>
+        <div class="h-card-body">
+          <div class="h-card-date">3 Juni 2026</div>
+          <h3 class="h-card-title">Bantuan Biaya Pendidikan bagi 35 Siswa Kurang Mampu di Wilayah Paroki</h3>
+          <p class="h-card-excerpt">Melalui program sosial paroki, sebanyak 35 siswa dari keluarga kurang mampu mendapat bantuan biaya pendidikan tahun ajaran baru.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER CHIPS -->
+<div class="filter-section">
+  <section style="padding:1.5rem 2rem">
+    <div class="section-inner" style="margin:0 auto;max-width:1200px">
+      <div class="filter-wrap">
+        <span class="filter-label">Kategori:</span>
+        <a href="#" class="chip active">Semua Berita</a>
+        <a href="#" class="chip">Kegiatan Umat</a>
+        <a href="#" class="chip">Liturgi</a>
+        <a href="#" class="chip">Pendidikan</a>
+        <a href="#" class="chip">Sosial</a>
+        <a href="#" class="chip">Pelayanan</a>
+        <a href="#" class="chip">Pengumuman</a>
+        <a href="#" class="chip">Komunitas</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- NEWS GRID -->
+<section class="news-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">Arsip Berita</div>
+      <h2 class="section-title">Semua Berita</h2>
+      <div class="section-line"><span></span><span></span></div>
+    </div>
+    <div class="news-grid">
+
+      <div class="n-card">
+        <div class="n-card-img"><img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=500&q=80" alt=""></div>
+        <div class="n-card-body">
+          <div class="n-card-top"><span class="n-card-cat">Komunitas</span><span class="n-card-date">29 Mei 2026</span></div>
+          <h3 class="n-card-title">Gema Kerja Program Santa Cecilia: Paduan Suara Paroki Tampil Memukau</h3>
+          <p class="n-card-desc">Komunitas Paduan Suara St. Antonius mempersembahkan penampilan istimewa dalam rangkaian perayaan hari musik gerejawi.</p>
+          <a href="#" class="n-card-link">Baca selengkapnya →</a>
+        </div>
+      </div>
+
+      <div class="n-card">
+        <div class="n-card-img"><img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=500&q=80" alt=""></div>
+        <div class="n-card-body">
+          <div class="n-card-top"><span class="n-card-cat">Pelayanan</span><span class="n-card-date">25 Mei 2026</span></div>
+          <h3 class="n-card-title">Pelantikan Pemandu Lingkungan Periode 2026–2028 di Aula Paroki</h3>
+          <p class="n-card-desc">Romo Paroki melantik 48 pemandu lingkungan baru yang akan bertugas melayani umat dalam periode pelayanan dua tahun ke depan.</p>
+          <a href="#" class="n-card-link">Baca selengkapnya →</a>
+        </div>
+      </div>
+
+      <div class="n-card">
+        <div class="n-card-img"><img src="https://images.unsplash.com/photo-1585842378054-ee2e52f94ba2?w=500&q=80" alt=""></div>
+        <div class="n-card-body">
+          <div class="n-card-top"><span class="n-card-cat">Pengumuman</span><span class="n-card-date">20 Mei 2026</span></div>
+          <h3 class="n-card-title">Pengumuman Jadwal Perayaan Ekaristi Triwulan III Tahun 2026</h3>
+          <p class="n-card-desc">Tim Liturgi Paroki mengumumkan perubahan jadwal perayaan ekaristi yang berlaku mulai Juli hingga September 2026.</p>
+          <a href="#" class="n-card-link">Baca selengkapnya →</a>
+        </div>
+      </div>
+
+      <div class="n-card">
+        <div class="n-card-img"><img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=500&q=80" alt=""></div>
+        <div class="n-card-body">
+          <div class="n-card-top"><span class="n-card-cat">Kegiatan Umat</span><span class="n-card-date">17 Mei 2026</span></div>
+          <h3 class="n-card-title">Napak Tilas Bersama: Pelayanan Rohani di Seluruh Wilayah Paroki Purbayan</h3>
+          <p class="n-card-desc">Tim Pastoral Paroki melaksanakan kunjungan dan pelayanan rohani ke 12 wilayah dan 48 lingkungan di seluruh kawasan paroki.</p>
+          <a href="#" class="n-card-link">Baca selengkapnya →</a>
+        </div>
+      </div>
+
+      <div class="n-card">
+        <div class="n-card-img"><img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=500&q=80" alt=""></div>
+        <div class="n-card-body">
+          <div class="n-card-top"><span class="n-card-cat">Komunitas</span><span class="n-card-date">13 Mei 2026</span></div>
+          <h3 class="n-card-title">Mengenal Santa Cecilia: Tokoh Inspirasi bagi Umat Paroki Generasi Muda</h3>
+          <p class="n-card-desc">Kelompok Orang Muda Katolik (OMK) mengadakan sesi pendalaman kisah hidup santa pelindung musik gereja sebagai refleksi iman.</p>
+          <a href="#" class="n-card-link">Baca selengkapnya →</a>
+        </div>
+      </div>
+
+      <div class="n-card">
+        <div class="n-card-img"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=500&q=80" alt=""></div>
+        <div class="n-card-body">
+          <div class="n-card-top"><span class="n-card-cat">Pendidikan</span><span class="n-card-date">9 Mei 2026</span></div>
+          <h3 class="n-card-title">Pengesahan Program Pelayanan Paroki Nomor 10 Tahun 2026 oleh Dewan Paroki</h3>
+          <p class="n-card-desc">Dewan Paroki secara resmi mengesahkan program pelayanan paroki yang mencakup bidang liturgi, pastoral, dan sosial kemasyarakatan.</p>
+          <a href="#" class="n-card-link">Baca selengkapnya →</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="load-more-wrap">
+      <a href="#" class="btn-outline">Muat Lebih Banyak Berita →</a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div class="newsletter-section">
+  <div class="newsletter-inner">
+    <div class="newsletter-eyebrow">Langganan Warta</div>
+    <h2 class="newsletter-title">Tetap Terhubung dengan Kabar Paroki</h2>
+    <p class="newsletter-desc">Dapatkan informasi terbaru mengenai kegiatan dan pelayanan paroki langsung di kotak masuk Anda setiap minggu.</p>
+    <div class="newsletter-form">
+      <input class="newsletter-input" type="email" placeholder="Alamat email Anda...">
+      <button class="newsletter-btn">Berlangganan</button>
+    </div>
+    <p class="newsletter-privacy">Kami menjaga privasi Anda. Berhenti berlangganan kapan saja.</p>
+  </div>
+</div>
+
+<!-- RECENT ACTIVITY -->
+<section class="timeline-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">Aktivitas Terbaru</div>
+      <h2 class="section-title">Jejak Kegiatan &amp; Pengumuman</h2>
+      <div class="section-line"><span></span><span></span></div>
+    </div>
+    <div class="timeline-cols">
+      <div>
+        <h3 style="font-size:13px;font-weight:600;color:var(--text-muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.5rem">Kegiatan &amp; Peristiwa</h3>
+        <div class="timeline-wrap">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">19 Juni 2026</div>
+            <div class="timeline-title">Misa Hari Minggu — Pekan Biasa XVI</div>
+            <div class="timeline-desc">Perayaan ekaristi Minggu pagi bersama Romo Adrianus SJ dihadiri lebih dari 400 umat dari berbagai lingkungan.</div>
+            <span class="timeline-tag green">Liturgi</span>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">15 Juni 2026</div>
+            <div class="timeline-title">HUT ke-90 Paroki St. Antonius Padua</div>
+            <div class="timeline-desc">Syukuran dan perayaan ulang tahun paroki berlangsung meriah dengan berbagai kegiatan rohani dan sosial selama tiga hari.</div>
+            <span class="timeline-tag blue">Komunitas</span>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">10 Juni 2026</div>
+            <div class="timeline-title">Kunjungan Tim Dea St. Antonius ke Panti Wreda</div>
+            <div class="timeline-desc">Tim dea paroki mengunjungi panti wreda setempat membawa bantuan kebutuhan pokok dan pelayanan rohani.</div>
+            <span class="timeline-tag orange">Sosial</span>
+          </div>
+          <div class="timeline-item secondary">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">5 Juni 2026</div>
+            <div class="timeline-title">Adorasi Ekaristi Malam — Komunitas Legio Maria</div>
+            <div class="timeline-desc">Komunitas Legio Maria mengadakan adorasi ekaristi malam yang diikuti 85 anggota aktif dari seluruh wilayah.</div>
+            <span class="timeline-tag blue">Komunitas</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size:13px;font-weight:600;color:var(--text-muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.5rem">Pengumuman &amp; Warta</h3>
+        <div class="timeline-wrap">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">18 Juni 2026</div>
+            <div class="timeline-title">Pendaftaran Bina Iman Anak Semester II Dibuka</div>
+            <div class="timeline-desc">Pendaftaran Bina Iman Anak semester kedua tahun 2026 resmi dibuka. Kuota terbatas untuk setiap kelompok usia.</div>
+            <span class="timeline-tag green">Pendidikan</span>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">14 Juni 2026</div>
+            <div class="timeline-title">Perubahan Jadwal Misa Jumat Pertama Bulan Juli</div>
+            <div class="timeline-desc">Diberitahukan kepada seluruh umat bahwa jadwal Misa Jumat Pertama bulan Juli mengalami penyesuaian waktu.</div>
+            <span class="timeline-tag orange">Pengumuman</span>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">9 Juni 2026</div>
+            <div class="timeline-title">Sosialisasi Adven 2026 — Tema dan Persiapan Awal</div>
+            <div class="timeline-desc">Tim Liturgi Paroki menyosialisasikan tema dan rancangan persiapan masa Adven 2026 kepada seluruh ketua lingkungan.</div>
+            <span class="timeline-tag blue">Liturgi</span>
+          </div>
+          <div class="timeline-item secondary">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">4 Juni 2026</div>
+            <div class="timeline-title">Kolekte Khusus Gereja Membantu Korban Bencana</div>
+            <div class="timeline-desc">Paroki mengadakan kolekte khusus untuk membantu saudara-saudari korban banjir di wilayah Jawa Tengah bagian selatan.</div>
+            <span class="timeline-tag orange">Sosial</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="nav-brand" href="#" style="text-decoration:none;margin-bottom:1rem;display:inline-flex">
+          <div class="nav-logo">SA</div>
+          <div class="nav-name" style="color:#fff">Paroki St. Antonius Padua <span>Purbayan Surakarta</span></div>
+        </a>
+        <p class="footer-desc">Melayani umat Kristiani di wilayah Purbayan dan sekitarnya dengan penuh kasih dan dedikasi sejak tahun 1936.</p>
+        <div class="footer-contact">
+          <strong>Alamat Gereja</strong>
+          Jl. Purbayan No. 1, Surakarta 57133<br>
+          📞 (0271) 632-xxx &nbsp;|&nbsp; ✉ info@antonius-purbayan.org
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigasi</div>
+        <ul class="footer-links">
+          <li><a href="#">Beranda</a></li>
+          <li><a href="#">Profil Gereja</a></li>
+          <li><a href="#">Sejarah Gereja</a></li>
+          <li><a href="#">Wilayah &amp; Lingkungan</a></li>
+          <li><a href="#">Pelayanan Sakramental</a></li>
+          <li><a href="#">Berita Paroki</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Pelayanan</div>
+        <ul class="footer-links">
+          <li><a href="#">Baptisan</a></li>
+          <li><a href="#">Perkawinan</a></li>
+          <li><a href="#">Krisma</a></li>
+          <li><a href="#">Pengurapan Orang Sakit</a></li>
+          <li><a href="#">Bina Iman Anak</a></li>
+          <li><a href="#">OMK</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Jadwal Misa</div>
+        <ul class="footer-links">
+          <li><a href="#">Minggu — 06.30</a></li>
+          <li><a href="#">Minggu — 09.00</a></li>
+          <li><a href="#">Minggu — 17.00</a></li>
+          <li><a href="#">Sabtu — 17.30</a></li>
+          <li><a href="#">Senin–Jumat — 06.00</a></li>
+          <li><a href="#">Jumat Pertama — 18.00</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Paroki St. Antonius Padua Purbayan Surakarta. Hak cipta dilindungi.</span>
+      <div class="footer-badges">
+        <div class="footer-badge" title="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </div>
+        <div class="footer-badge" title="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" style="fill:#071e2b"/></svg>
+        </div>
+        <div class="footer-badge" title="Instagram">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" style="fill:#071e2b"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
