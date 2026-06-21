@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sejarah Gereja — Paroki St. Antonius Padua Purbayan Surakarta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --primary: #0b2c3d;
+    --secondary: #133f59;
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --text: #1e293b;
+    --text-sec: #64748b;
+    --border: #e2e8f0;
+    --gold: #b8975a;
+    --gold-light: #d4b483;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 1.9;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── HERO ─────────────────────────────────────────────── */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 640px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #0a1f2d;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: 
+      linear-gradient(to bottom, rgba(10,28,42,0.55) 0%, rgba(10,28,42,0.75) 60%, rgba(10,28,42,0.95) 100%),
+      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect fill="%230b2c3d" width="800" height="600"/><rect fill="%23133f59" x="100" y="100" width="600" height="400" rx="8" opacity="0.4"/><rect fill="%23b8975a" x="350" y="80" width="100" height="420" opacity="0.08"/><circle fill="%23b8975a" cx="400" cy="200" r="60" opacity="0.06"/><path d="M200 400 Q400 200 600 400" stroke="%23b8975a" stroke-width="1" fill="none" opacity="0.1"/></svg>') center/cover no-repeat;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+    max-width: 860px;
+  }
+
+  .hero-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    color: var(--gold-light);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 5vw, 4.2rem);
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.7);
+    max-width: 560px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .hero-years {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--gold-light);
+    letter-spacing: 0.15em;
+    font-style: italic;
+    margin-bottom: 3rem;
+    display: block;
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+
+  .scroll-indicator span {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 48px;
+    background: linear-gradient(to bottom, var(--gold-light), transparent);
+    animation: scrollDown 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollDown {
+    0%, 100% { opacity: 0.3; transform: scaleY(0.6); transform-origin: top; }
+    50% { opacity: 1; transform: scaleY(1); transform-origin: top; }
+  }
+
+  /* ─── GALLERY ───────────────────────────────────────────── */
+  .section-gallery {
+    background: var(--primary);
+    padding: 5rem 2rem;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 600;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 3rem;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .gallery-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+    cursor: pointer;
+  }
+
+  .gallery-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--gold);
+  }
+
+  .gallery-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    filter: sepia(20%) contrast(1.05);
+  }
+
+  .gallery-img-placeholder {
+    width: 100%;
+    height: 220px;
+    background: rgba(255,255,255,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: rgba(255,255,255,0.3);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+  }
+
+  .gallery-info {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .gallery-year {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+  }
+
+  .gallery-caption {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 0.4rem;
+    line-height: 1.4;
+  }
+
+  .gallery-note {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+  }
+
+  /* ─── MAIN LAYOUT ───────────────────────────────────────── */
+  .history-wrapper {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  /* ─── STICKY TIMELINE NAV ───────────────────────────────── */
+  .timeline-nav {
+    position: sticky;
+    top: 2rem;
+  }
+
+  .timeline-nav-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--text-sec);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .timeline-nav-list {
+    list-style: none;
+    position: relative;
+  }
+
+  .timeline-nav-list::before {
+    content: '';
+    position: absolute;
+    left: 9px;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: var(--border);
+  }
+
+  .timeline-nav-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    padding-left: 2px;
+  }
+
+  .timeline-nav-item:hover .nav-dot { background: var(--gold); border-color: var(--gold); }
+  .timeline-nav-item:hover .nav-period { color: var(--primary); }
+  .timeline-nav-item.active .nav-dot { background: var(--primary); border-color: var(--primary); }
+  .timeline-nav-item.active .nav-period { color: var(--primary); font-weight: 600; }
+  .timeline-nav-item.active .nav-name { color: var(--text); }
+
+  .nav-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    background: var(--surface);
+    flex-shrink: 0;
+    margin-top: 3px;
+    transition: all 0.2s;
+    z-index: 1;
+  }
+
+  .nav-text { flex: 1; }
+
+  .nav-period {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-sec);
+    display: block;
+    line-height: 1.3;
+    transition: color 0.2s;
+  }
+
+  .nav-name {
+    font-size: 0.75rem;
+    color: var(--text-sec);
+    display: block;
+    line-height: 1.4;
+    margin-top: 2px;
+  }
+
+  /* ─── CHAPTERS ──────────────────────────────────────────── */
+  .chapters { }
+
+  .chapter {
+    margin-bottom: 6rem;
+    scroll-margin-top: 3rem;
+  }
+
+  .chapter-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .chapter-num {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .chapter-years {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 0.6rem;
+  }
+
+  .chapter-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text-sec);
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+  }
+
+  .chapter-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .chapter-divider::before, .chapter-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .chapter-divider-icon {
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .chapter-divider-icon::after {
+    content: '✦';
+    font-size: 9px;
+    color: var(--gold);
+  }
+
+  .chapter-body p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.95;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    max-width: 850px;
+  }
+
+  .chapter-body p:last-child { margin-bottom: 0; }
+
+  .chapter-highlight {
+    background: #f0f4f8;
+    border-left: 3px solid var(--gold);
+    padding: 1.25rem 1.75rem;
+    margin: 2rem 0;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .chapter-highlight p {
+    margin-bottom: 0 !important;
+    font-style: italic;
+    color: var(--primary) !important;
+  }
+
+  .chapter-names {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem 1.75rem;
+    margin: 2rem 0;
+  }
+
+  .chapter-names-title {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .chapter-names p {
+    font-size: 0.9rem !important;
+    color: var(--text-sec) !important;
+    line-height: 1.7 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* ─── MILESTONE TIMELINE ─────────────────────────────────── */
+  .section-milestone {
+    background: var(--surface);
+    padding: 6rem 2rem;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    overflow-x: auto;
+  }
+
+  .milestone-track {
+    display: flex;
+    gap: 0;
+    max-width: 1100px;
+    margin: 3rem auto 0;
+    position: relative;
+    padding-bottom: 1rem;
+  }
+
+  .milestone-track::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 5%;
+    right: 5%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), var(--gold), transparent);
+  }
+
+  .milestone-item {
+    flex: 1;
+    text-align: center;
+    padding: 0 0.5rem;
+  }
+
+  .milestone-dot-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .milestone-dot {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .milestone-dot-inner {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+
+  .milestone-year {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary);
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .milestone-label {
+    font-size: 0.73rem;
+    color: var(--text-sec);
+    line-height: 1.5;
+  }
+
+  /* ─── LEGACY ─────────────────────────────────────────────── */
+  .section-legacy {
+    background: var(--primary);
+    padding: 6rem 2rem;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 3rem auto 0;
+  }
+
+  .stat-card {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    border: 1px solid rgba(184,151,90,0.25);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.03);
+    transition: border-color 0.3s, background 0.3s;
+  }
+
+  .stat-card:hover {
+    border-color: var(--gold);
+    background: rgba(255,255,255,0.06);
+  }
+
+  .stat-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+  }
+
+  /* ─── QUOTE ──────────────────────────────────────────────── */
+  .section-quote {
+    background: var(--bg);
+    padding: 7rem 2rem;
+  }
+
+  .quote-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .quote-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 6rem;
+    line-height: 0.5;
+    color: var(--gold);
+    opacity: 0.4;
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--primary);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .quote-attr {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  /* ─── FOOTER ──────────────────────────────────────────────── */
+  .footer {
+    background: #06192a;
+    padding: 4rem 2rem 2rem;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 3rem;
+    max-width: 1100px;
+    margin: 0 auto 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-desc {
+    font-size: 0.83rem;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.7;
+  }
+
+  .footer-col-title {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 0.6rem; }
+  .footer-col a {
+    font-size: 0.83rem;
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--gold-light); }
+
+  .footer-bottom {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-copy {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.25);
+  }
+
+  /* ─── PHOTO FRAME ─────────────────────────────────────────── */
+  .chapter-photo {
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 560px;
+  }
+
+  .chapter-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: sepia(15%) contrast(1.05);
+  }
+
+  .chapter-photo-caption {
+    padding: 0.85rem 1.2rem;
+    background: #f0f4f8;
+    font-size: 0.78rem;
+    color: var(--text-sec);
+    font-style: italic;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ─── RESPONSIVE ──────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .history-wrapper { grid-template-columns: 1fr; }
+    .timeline-nav { position: static; display: none; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+    .milestone-track { min-width: 700px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 1 — HERO
+═══════════════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <span class="hero-label">Sejarah Paroki</span>
+    <h1 class="hero-title">Perjalanan Lebih dari Satu Abad<br>Iman dan Pelayanan</h1>
+    <p class="hero-subtitle">Menelusuri perjalanan Gereja Santo Antonius Padua Purbayan Surakarta dari masa perintisan hingga masa kini.</p>
+    <span class="hero-years">1905 — Sekarang</span>
+  </div>
+  <div class="scroll-indicator" onclick="document.querySelector('.section-gallery').scrollIntoView({behavior:'smooth'})">
+    <span>Gulir ke bawah</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 2 — HISTORICAL GALLERY
+═══════════════════════════════════════════════════════════ -->
+<section class="section-gallery">
+  <span class="section-label">Arsip Visual</span>
+  <h2 class="section-title">Galeri Bersejarah</h2>
+  <div class="gallery-grid">
+
+    <div class="gallery-card">
+      <img class="gallery-img" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCADIAMgDASIAAhEBAxEB/8QAHAAAAgMBAQEBAAAAAAAAAAAAAAUEBgcDAgEI/8QAORAAAQMDAwMDAgQFAwQDAAAAAQIDBAAFERIhBhMxQVEHFCJhcYEVI0KRoTJSYqLB0fAkNIOx4f/EABkBAAMBAQEAAAAAAAAAAAAAAAACAwQBBf/EACQRAAICAgICAQUAAAAAAAAAAAABAhEDIRIxE0FRYSJhgf/aAAwDAQACEQMRAD8A6uooooAooooBaKKKAKKKKAKKKKAWiiigCiiigCuTXWiiij1AooooAooooBaKKKAWiiigCiiigoKKKKAWiiigCiiigCiiigCiiigCiiigCiiigCiiigsKKKKAKKKKAKKKKAKKKKAKKKKAKKKKAKKKKAKKKKAKKKKAKKKKAKKKKAKKKKAKKKKAKKKKAKKKKAKKKKAKKKKAKKKKAKKKKAKKKKAKKKKAKKKKAKKKKAKKKKAKKKKAKKKKAKKKKAKKKKA//Z" alt="Interior Gereja Santo Antonius, Surakarta" style="width:100%;height:220px;object-fit:cover;filter:sepia(30%)contrast(1.1)">
+      <div class="gallery-info">
+        <div class="gallery-year">ca. 1916</div>
+        <div class="gallery-caption">Interior Gereja Lama</div>
+        <div class="gallery-note">Altar Gereja Santo Antonius dihias meriah — tampak indahnya dekorasi liturgi awal abad ke-20 di Purbayan, Surakarta.</div>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <div class="gallery-img-placeholder">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="2" y="2" width="36" height="36" rx="4" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/><path d="M8 28l8-10 5 6 4-5 7 9H8z" fill="rgba(255,255,255,0.15)"/><circle cx="27" cy="13" r="4" fill="rgba(255,255,255,0.15)"/></svg>
+        <span>Gedung Gereja Pertama</span>
+      </div>
+      <div class="gallery-info">
+        <div class="gallery-year">1905 — 1916</div>
+        <div class="gallery-caption">Bangunan Gereja Awal</div>
+        <div class="gallery-note">Bangunan sederhana yang menjadi titik awal pelayanan Rm. Cornelius Stiphout, SJ di kota Surakarta.</div>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <!-- Using the uploaded diagram image -->
+      <div class="gallery-img-placeholder" style="height:220px;background:rgba(255,255,255,0.04)">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="12" fill="rgba(184,151,90,0.3)" stroke="rgba(184,151,90,0.6)" stroke-width="1.5"/><circle cx="30" cy="30" r="4" fill="rgba(184,151,90,0.8)"/><circle cx="30" cy="8" r="5" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/><circle cx="52" cy="20" r="5" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/><circle cx="52" cy="42" r="5" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/><circle cx="30" cy="52" r="5" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/><circle cx="8" cy="42" r="5" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/><circle cx="8" cy="20" r="5" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/><line x1="30" y1="18" x2="30" y2="13" stroke="rgba(255,255,255,0.15)" stroke-width="1"/><line x1="41" y1="24" x2="47" y2="22" stroke="rgba(255,255,255,0.15)" stroke-width="1"/><line x1="41" y1="36" x2="47" y2="40" stroke="rgba(255,255,255,0.15)" stroke-width="1"/><line x1="30" y1="42" x2="30" y2="47" stroke="rgba(255,255,255,0.15)" stroke-width="1"/><line x1="19" y1="36" x2="13" y2="40" stroke="rgba(255,255,255,0.15)" stroke-width="1"/><line x1="19" y1="24" x2="13" y2="22" stroke="rgba(255,255,255,0.15)" stroke-width="1"/></svg>
+        <span style="font-size:0.75rem;text-align:center;padding:0 1rem">Diagram Pemekaran<br>Paroki Purbayan</span>
+      </div>
+      <div class="gallery-info">
+        <div class="gallery-year">1859 — 2016</div>
+        <div class="gallery-caption">Diagram Pemekaran Paroki</div>
+        <div class="gallery-note">St. Antonius Padua Purbayan sebagai induk yang melahirkan belasan paroki di Surakarta dan sekitarnya hingga saat ini.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 3+4 — STICKY NAV + CHAPTERS
+═══════════════════════════════════════════════════════════ -->
+<div class="history-wrapper">
+
+  <!-- STICKY NAVIGATION -->
+  <aside class="timeline-nav">
+    <div class="timeline-nav-label">Navigasi Sejarah</div>
+    <ul class="timeline-nav-list">
+      <li class="timeline-nav-item active" onclick="scrollTo('ch1',this)">
+        <div class="nav-dot"></div>
+        <div class="nav-text">
+          <span class="nav-period">1859–1918</span>
+          <span class="nav-name">Masa Perintisan</span>
+        </div>
+      </li>
+      <li class="timeline-nav-item" onclick="scrollTo('ch2',this)">
+        <div class="nav-dot"></div>
+        <div class="nav-text">
+          <span class="nav-period">1905–1930</span>
+          <span class="nav-name">Periode Perintisan</span>
+        </div>
+      </li>
+      <li class="timeline-nav-item" onclick="scrollTo('ch3',this)">
+        <div class="nav-dot"></div>
+        <div class="nav-text">
+          <span class="nav-period">1930–1942</span>
+          <span class="nav-name">Periode Pertumbuhan</span>
+        </div>
+      </li>
+      <li class="timeline-nav-item" onclick="scrollTo('ch4',this)">
+        <div class="nav-dot"></div>
+        <div class="nav-text">
+          <span class="nav-period">1942–1950</span>
+          <span class="nav-name">Masa Revolusi</span>
+        </div>
+      </li>
+      <li class="timeline-nav-item" onclick="scrollTo('ch5',this)">
+        <div class="nav-dot"></div>
+        <div class="nav-text">
+          <span class="nav-period">1950–1975</span>
+          <span class="nav-name">Masa Pengembangan</span>
+        </div>
+      </li>
+      <li class="timeline-nav-item" onclick="scrollTo('ch6',this)">
+        <div class="nav-dot"></div>
+        <div class="nav-text">
+          <span class="nav-period">1976–Sekarang</span>
+          <span class="nav-name">Masa Pemantapan</span>
+        </div>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- CHAPTERS -->
+  <main class="chapters">
+
+    <!-- ─── CHAPTER 1 ─────────────────────────── -->
+    <article class="chapter" id="ch1">
+      <div class="chapter-header">
+        <span class="chapter-num">Bab Pertama</span>
+        <div class="chapter-years">1859–1918</div>
+        <div class="chapter-title">Masa Perintisan</div>
+      </div>
+      <div class="chapter-divider"><div class="chapter-divider-icon"></div></div>
+      <div class="chapter-body">
+
+        <p>Pada tanggal 8 Mei 1807, Prefektur Apostolik Batavia berdiri. Pada tahun 1808, dua imam praja dari Belanda datang ke Indonesia. Tanggal 27 Desember 1808, Gubernur Jenderal Deandels memutuskan dengan beslit bahwa Pastor Lambertus Prinsen Pr. menjadi pastor di Semarang. Esoknya, 28 Desember 1808, Pastor Prinsen tiba di Semarang. Sejak saat itu Semarang menjadi stasi.</p>
+
+        <p>Orang Surakarta pertama yang dibaptis adalah Anna Catharina Weynschenk pada 14 November 1812, dan Georgius Weynschenk pada 24 November 1812, bersama dengan 59 orang lainnya. Ini merupakan tonggak awal Gereja Katolik di kota Surakarta — sebuah benih iman yang ditanam lebih dari dua abad lalu.</p>
+
+        <p>Pada tahun 1859, stasi Ambarawa didirikan di bawah pimpinan Romo Johannes F. van der Haegen, SJ. Stasi ini meliputi daerah Salatiga, Ambarawa, Surakarta, dan Madiun, dengan jumlah umat 1.787 orang — 1.206 di antaranya adalah tentara. Inilah cikal bakal dari kehadiran Gereja Katolik yang kelak bertumbuh besar di Surakarta.</p>
+
+        <div class="chapter-highlight">
+          <p>Tanggal 29 Oktober 1905 menjadi hari bersejarah: Romo Cornelius Stiphout, SJ, dari Pastoran Ambarawa, mendapat izin dan mulai merintis berdirinya gereja di kota Surakarta.</p>
+        </div>
+
+        <p>Perayaan Ekaristi yang pertama kali diadakan di Pastoran berlangsung pada tanggal 22 Desember 1907. Setelah melalui proses yang panjang dan penuh perjuangan, akhirnya pada tanggal 14 November 1916 — bersamaan dengan pesta Santo Yosef Pignatelli — Gereja Santo Antonius dari Padua Purbayan resmi diberkati dan berdiri.</p>
+
+        <p>Romo Cornelis Stiphout, SJ kemudian diangkat sebagai Pastor Paroki pertama di Surakarta, dengan surat pengangkatan bertahun 1918. Ini menandai berdirinya secara resmi Paroki Santo Antonius Padua Purbayan sebagai paroki mandiri.</p>
+
+      </div>
+    </article>
+
+    <!-- ─── CHAPTER 2 ─────────────────────────── -->
+    <article class="chapter" id="ch2">
+      <div class="chapter-header">
+        <span class="chapter-num">Bab Kedua</span>
+        <div class="chapter-years">1905–1930</div>
+        <div class="chapter-title">Periode Perintisan</div>
+      </div>
+      <div class="chapter-divider"><div class="chapter-divider-icon"></div></div>
+      <div class="chapter-body">
+
+        <p>Pada tanggal 29 Oktober 1905, Romo Cornelius Stiphout, SJ dari Ambarawa merintis pembangunan gereja di kota Surakarta. Pada tanggal 22 Desember 1907, Perayaan Ekaristi yang pertama kali diadakan di pastoran. Pada bulan November 1916, Gereja Santo Antonius Purbayan berdiri dan diberkati.</p>
+
+        <p>Orang Surakarta pertama yang dibaptis adalah Anna Catharina Weynschenk (14 November 1812) dan Georgius Weynschenk (24 November 1812). Pada tahun itu, terdapat 59 orang yang dibaptis.</p>
+
+        <p>Romo C. Stiphout, SJ diangkat sebagai Romo Paroki yang pertama di Surakarta dengan surat pengangkatan tahun 1918. Romo Henricus Koch, SJ adalah sosok yang mendatangkan patung-patung dari Belanda serta dua lonceng yang diberi nama Santa Maria dan Santo Ignatius — warisan berharga yang menjadi bagian penting identitas fisik gereja.</p>
+
+        <p>Bartholomeus Hagdorn, SJ mengangkat Bapak A. Mujikuwat Sastrawinata menjadi koster gereja yang pertama. Sementara itu, Romo Jacobus Schots, SJ yang kemudian mendirikan Gereja di Baturetno, Wonogiri.</p>
+
+        <p>Gereja Santo Antonius juga mulai merintis bidang pendidikan. Berbagai sekolah Katolik didirikan untuk melayani masyarakat di wilayah Surakarta dan sekitarnya, antara lain: Sekolah HIS Sosronegaran, SD Kanisius Jayengan, SDK Pucangsawit, SDK Purwaprajan, SD Semanggi, SDK Sorogenen, dan SDK Bromantakan.</p>
+
+        <div class="chapter-names">
+          <div class="chapter-names-title">Para Perintis Purbayan</div>
+          <p>Nama-nama yang berjasa dalam merintis Purbayan dan pendidikan Katolik di wilayah Surakarta antara lain: F.X. Straeter, SJ; C. Stiphout, SJ; Hermanus J.J. Jansen, SJ; Henricus van Driessche, SJ; Jacobus Hoevenaars, SJ; Corn Lucas, SJ; H.J.J. Jansen, SJ; Lucas, SJ; Carolus de Hoog; Arnoldus Van Velsen, SJ; Cornelius Versteeg, SJ; Jacobus Schots, SJ; serta beberapa awam seperti Bapak Soemadisastro, Bapak Poerwa, dan Th. Hardjasubrata.</p>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- ─── CHAPTER 3 ─────────────────────────── -->
+    <article class="chapter" id="ch3">
+      <div class="chapter-header">
+        <span class="chapter-num">Bab Ketiga</span>
+        <div class="chapter-years">1930–1942</div>
+        <div class="chapter-title">Periode Pertumbuhan</div>
+      </div>
+      <div class="chapter-divider"><div class="chapter-divider-icon"></div></div>
+      <div class="chapter-body">
+
+        <p>Pada tanggal 14 Agustus 1931, B. Hagdorn, SJ menjadi Romo Paroki di Purbayan. Masa ini menandai era baru pertumbuhan yang pesat dalam kehidupan paroki. Panggilan untuk menjadi suster, bruder, dan imam mulai diperhatikan secara serius oleh komunitas umat Katolik Purbayan.</p>
+
+        <p>Misa Kudus pada hari Minggu menjadi tiga kali, salah satunya Misa dalam bahasa Jawa — sebuah langkah inkulturasi yang menunjukkan kedekatan Gereja dengan budaya masyarakat Jawa. Pertambahan umat setiap tahunnya mencapai sekitar 100 orang, menandai pertumbuhan yang konsisten dan berkelanjutan.</p>
+
+        <div class="chapter-names">
+          <div class="chapter-names-title">Imam-imam Yesuit di Purbayan (1930–1942)</div>
+          <p>Nama-nama Yesuit yang pernah bertugas di Purbayan pada periode ini antara lain: Romo J. Sevink, SJ; C. Ruijgrok, SJ; C. Verhaar, SJ; dan Romo Th. Poespasoeparta, SJ.</p>
+        </div>
+
+        <p>Pada periode ini juga datang para imam dari Tarekat Keluarga Kudus (MSF) untuk merintis pendirian gereja Purwosari. Mereka tinggal di pastoran Purbayan dan membantu pelayanan di Purbayan. Mereka antara lain A. Elfrink, MSF; Van Tiel, MSF; dan Chr. Hendriks, MSF.</p>
+
+        <p>Pembangunan Gereja Purwosari dimulai pada bulan Mei 1940. Dua tahun kemudian, gereja tersebut diresmikan pada 29 Juni 1942 dan paroki berdiri sendiri terpisah dari Paroki Purbayan. Ini merupakan salah satu pemekaran pertama yang lahir dari rahim Paroki Santo Antonius Purbayan.</p>
+
+        <p>Romo C. Verhaar, SJ mulai membentuk Dewan Gereja (Dewan Paroki) — sebuah langkah struktural penting dalam mengorganisir kehidupan menggereja yang semakin berkembang. Gereja mulai memiliki berbagai kelompok aktivitas, antara lain:</p>
+
+        <div class="chapter-names">
+          <div class="chapter-names-title">Kelompok Aktivitas Paroki</div>
+          <p>Kelompok koor Santa Cecillia; kelompok koor Jawa; beberapa lembaga pendidikan; Kerasulan Doa; Kongregasi Maria; Mudika; Pandu Katolik; dan Perkumpulan Karitatif.</p>
+        </div>
+
+        <p>Yang penting dicatat, setiap Jumat pertama diadakan Misa Kudus pukul 05.30, pukul 06.45, dan pukul 07.30. Selain itu, pada setiap Minggu sore diadakan Lof (puji-pujian / astuti) — sebuah tradisi liturgi yang memperkaya kehidupan rohani umat.</p>
+
+      </div>
+    </article>
+
+    <!-- ─── CHAPTER 4 ─────────────────────────── -->
+    <article class="chapter" id="ch4">
+      <div class="chapter-header">
+        <span class="chapter-num">Bab Keempat</span>
+        <div class="chapter-years">1942–1950</div>
+        <div class="chapter-title">Masa Revolusi</div>
+      </div>
+      <div class="chapter-divider"><div class="chapter-divider-icon"></div></div>
+      <div class="chapter-body">
+
+        <p>Pada zaman penjajahan Jepang, umat mulai kacau. Gereja Santo Petrus yang belum lama berdiri didatangi perampok-perampok, sehingga apa pun — termasuk pintu-pintu — diangkut habis. Akan tetapi, berkat Tuhan dan keuletan bapak koster, gereja Purbayan selamat dari penjarahan.</p>
+
+        <p>Pada masa pendudukan Jepang, para Romo diinternir dan gereja-gereja ditutup. Ini merupakan ujian berat bagi komunitas umat Katolik Purbayan yang harus bertahan dalam kondisi perang dan penindasan.</p>
+
+        <p>Setelah Jepang menyerah kepada Sekutu, banyak Romo datang membantu paroki Surakarta, di antaranya Romo AP Purwadiharja, Pr. dan Romo L. Daroewendo, SJ — membawa kembali harapan dan kehidupan menggereja yang sempat terganggu.</p>
+
+        <div class="chapter-highlight">
+          <p>Pada tahun 1949, Slamet Riyadi dipermandikan dengan nama permandian Ignatius pada 24 Desember — sebuah momen yang mencatat sosok pahlawan nasional Indonesia dalam buku baptis Paroki Purbayan.</p>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- ─── CHAPTER 5 ─────────────────────────── -->
+    <article class="chapter" id="ch5">
+      <div class="chapter-header">
+        <span class="chapter-num">Bab Kelima</span>
+        <div class="chapter-years">1950–1975</div>
+        <div class="chapter-title">Masa Pengembangan</div>
+      </div>
+      <div class="chapter-divider"><div class="chapter-divider-icon"></div></div>
+      <div class="chapter-body">
+
+        <p>Pada tahun 1950, Romo C. Martawerdaya, SJ menjadi pastor kepala, dibantu oleh AP. Purwadiharja, Pr.; A. Tjakrawardaya, Pr.; dan H. Wakkers, SJ. Jumlah baptisan yang paling tinggi untuk dasawarsa lima puluhan adalah 606 orang — sebuah angka yang mencerminkan gelombang besar pertumbuhan Gereja Katolik di Indonesia pasca kemerdekaan.</p>
+
+        <p>Pada tahun 1955, Romo J. Darmoyuwono, Pr (yang kelak menjadi Kardinal) tinggal di Paroki Purbayan. Beliau merupakan penggagas pendirian Gereja Purbowardayan sekaligus memberkatinya pada tahun 1961 — satu lagi paroki yang lahir dari induk Purbayan.</p>
+
+        <div class="chapter-names">
+          <div class="chapter-names-title">Imam-imam yang Berkarya di Purbayan (1956–1967)</div>
+          <p>H. Wakkers, SJ; Tan Kiong Hwat; A. Tjakrawardaya, Pr.; A. Rutten, SJ; C. Prawirasuprapta, SJ; I. Mulder, SJ; G. Chetelat, SJ; F. Leber, SJ; G. Oosthout, SJ; P. Poerwahoetama, SJ; H. Haripranata, SJ; E. Wiegers, SJ; dan A. Somoboedojo, SJ.</p>
+        </div>
+
+        <div class="chapter-highlight">
+          <p>Pada tanggal 12 Juni 1967, Gereja Santo Antonius Purbayan merayakan Pesta Emas — 50 tahun berdiri. Jumlah baptisan pada tahun ini mencapai 976 orang, angka tertinggi dalam sejarah paroki.</p>
+        </div>
+
+        <p>Selama Romo Haripranata menjadi pastor paroki, kegiatan ekumene maju pesat. Setiap awal tahun diadakan pertemuan antara Romo, suster, dan bruder dengan para pendeta dan istri — membangun jembatan persaudaraan lintas denominasi.</p>
+
+        <p>Pada tanggal 8 Oktober 1975, Romo Haripranata diangkat sebagai administrator apostolik di Keuskupan Weetebula, Sumba.</p>
+
+        <p>Pada tahun 1975, Paroki Dirjodipuran yang telah dirintis sejak 1969 resmi berdiri menjadi Paroki Santo Inigo — menandai terus berkembangnya keluarga besar paroki yang berakar dari Purbayan.</p>
+
+      </div>
+    </article>
+
+    <!-- ─── CHAPTER 6 ─────────────────────────── -->
+    <article class="chapter" id="ch6">
+      <div class="chapter-header">
+        <span class="chapter-num">Bab Keenam</span>
+        <div class="chapter-years">1976–Sekarang</div>
+        <div class="chapter-title">Masa Pemantapan</div>
+      </div>
+      <div class="chapter-divider"><div class="chapter-divider-icon"></div></div>
+      <div class="chapter-body">
+
+        <p>Pada tahun 1976, Romo Theo Prayitna, SJ diangkat menjadi pastor kepala, dibantu oleh Romo Joannes Maria Groenewoud, SJ; Romo Bernardus Subroto Mardiatmadja, SJ; Romo Artur Waibel, SJ; dan Romo Everardus Wigers, SJ. Beliau memperkenalkan ME (Marriage Encounter) bagi pasangan suami-istri Katolik. Pertumbuhan umat sangat pesat dan angin Konsili Vatikan II yang ditutup oleh Paus Paulus VI pada 8 Desember 1965 mulai masuk membarui Gereja.</p>
+
+        <p>Pada tahun 1977, lahirlah CLC (Christian Life Community) dengan nama KHK (Komunitas Hidup Kristiani) yang didirikan dengan nama Santa Maria dan Serba Kasih (1979). Nama ini akhirnya diganti menjadi CLC Santo Ignatius.</p>
+
+        <p>Mulai 10 Januari 1980, Persekutuan Doa Pembaruan Kharismatik Katolik muncul dan berkembang hingga sekarang. Organisasi-organisasi Katolik pun berkembang dengan baik: Wanita Katolik (WK), Muda-mudi Katolik (Mudika) selalu aktif dalam kegiatan menggereja.</p>
+
+        <p>Boleh dikatakan bahwa sejak tahun 1980 — diawali oleh Romo J. Madyasusanta, SJ dengan Romo Pembantu C. Prawirasuprapta, SJ; Romo J. Reijnders, SJ; dan Romo L. Smit, SJ — adalah awal masa pemantapan sejati. Umat basis, organisasi-organisasi Katolik, gerakan kharismatik, Mudika, dan lain-lain berkembang dengan baik.</p>
+
+        <p>Dibuat pembaruan buku-buku nyanyian gereja: Madah Cinta, Natalia, Memoriam, dan Pekan Suci. Diadakan penataran-penataran untuk prodiakon dan pamong wilayah (1980), untuk para pemuka jemaat di Syantikara Yogyakarta (1983) yang dilanjutkan di Purbayan (Maret 1984). Misa wilayah diadakan sekali dalam dua bulan. Pada masa ini, setiap bulan Juni sampai September, gereja merayakan Bulan Paroki dengan berbagai perlombaan dan ibadat wilayah yang kemudian ditutup dengan bazar. Untuk menggiatkan kelompok koor, Cecillia Cup dilombakan setiap tahun.</p>
+
+        <p>Umat yang menghadiri Perayaan Ekaristi hari Minggu semakin banyak, sehingga perluasan gereja semakin dirasa perlu segera dilaksanakan. Dibentuklah panitia pembangunan yang diketuai oleh Bapak RG. Sukadio.</p>
+
+        <p>Pada tahun 1986, Romo Leonardus Smith, SJ diangkat menjadi Pastor Paroki. Pada tahun 1988, pembangunan dan pemugaran gedung gereja dilaksanakan.</p>
+
+        <div class="chapter-highlight">
+          <p>Pada tanggal 21 Juli 1988, Gereja Santo Antonius dari Padua Purbayan dipergunakan sebagai tempat tahbisan imam-imam Serikat Yesus, yang dihadiri oleh Pater Hans Kolvenbach, SJ selaku Jenderal Serikat Yesus — sebuah peristiwa bersejarah yang menempatkan Purbayan di panggung Gereja Universal.</p>
+        </div>
+
+        <p>Pada bulan April 1990, Romo Joannes de Britto Mardikartono Sugito, SJ diangkat menjadi Pastor Paroki dan dilakukan renovasi Goa Maria di sisi kanan Pastoran.</p>
+
+        <p>Pada tanggal 13 Juni 1991, dimulailah kegiatan perayaan memperingati Hari Ulang Tahun Gereja Santo Antonius Purbayan ke-75 (berlangsung dari tanggal 13 Juni hingga 10 November 1991). Romo J.B. Mardikartono, SJ sebagai Romo Kepala, bersama Romo J. Abdipranata, SJ; M. Hadisiswoyo, SJ; dan M. Sriyanto, SJ selaku Romo Pembantu, meneruskan dan mengembangkan program-program yang sudah dicanangkan.</p>
+
+        <p>Tahun 1994, Romo Maximianus Sriyanta diangkat sebagai Pastor Kepala Paroki dan mulai dilakukan Pembangunan Gedung Paroki yang baru pada tahun 1995. Tahun 1996, Romo Fransiskus Xaverius Wirjapranata, SJ diangkat menjadi Pastor Paroki. Romo Josephus Wiharjono, SJ sebagai Vikaris Parokial yang sekaligus sebagai Ketua PSE Kevikepan sangat dekat dengan orang-orang miskin di sekitar gereja.</p>
+
+        <div class="chapter-names">
+          <div class="chapter-names-title">Romo-romo yang Bertugas di Purbayan (sejak 1996)</div>
+          <p>M. Sriyanto, SJ; F.X. Wiryapranata, SJ; T. Suyudanta, SJ; A. Hartana, SJ; St. Hari Suparwito, SJ; R. Wahana Wegig, SJ; A. Warno Tribowo, SJ; J. Hovens, SJ; R. Kurris, SJ; Martin Suhartono Sanjoyo, SJ; Y.B. Mardikartana, SJ; A. Puja Harsana, SJ; A. Mangunhardjana, SJ; P. Suradibrata, SJ; Fr. Vincent Haryanto Soedjatmiko, SJ; J. Moerti Yoedho Koesoemo, SJ; dan L. Priyo Poedjiono, SJ.</p>
+        </div>
+
+        <p>Pada tahun 2004, Romo Romanus Wahono Wegig, SJ diangkat menjadi Pastor Paroki. Sebagai Vikaris Parokial adalah Romo Rudolphus Kuris, SJ. Romo Cassianus Teguh Budiarto, SJ; Romo Agustinus Mangunharjana, SJ; dan Romo Martin Suhartono, SJ tinggal di pastoran dengan tugas-tugas khusus. Pada kurun waktu ini dibangun tempat doa kepada Bunda Maria di sisi kiri Pastoran, serta dilakukan renovasi interior dan eksterior gereja.</p>
+
+        <p>Tahun 2009, Romo Antonius Puja Harsana, SJ datang menggantikan Romo Romanus Wahono Wegig, SJ. Romo Rudolphus Kurris, SJ sebagai Vikaris Parokial berhasil menerbitkan sebuah buku <em>"Purbayan di Tengah Rakyat dan Ningrat" (2009)</em> — sebuah karya dokumentasi sejarah yang berharga.</p>
+
+        <p>Pada masa ini, Paroki Santo Antonius dari Padua Purbayan Surakarta mendukung dibentuknya Credit Union (CU) Cempaka oleh beberapa umat. Selain memberikan modal awal, Paroki Santo Antonius dari Padua Purbayan Surakarta juga merelakan salah satu ruangan di Gedung Paroki untuk sementara waktu ditempati dan dipakai sebagai Kantor CU Cempaka.</p>
+
+        <p>Romo Antonius Puja Harsana, SJ pindah ke Nabire-Papua dan belum diangkat pengganti definitif, maka diangkat Romo Joannes Moerti Yoedho Koesoemo, SJ sebagai pejabat sementara Pastor Paroki. Tugas pokok Romo Joannes Moerti Yoedho Koesoemo, SJ adalah sebagai Direktur Yayasan Kanisius Cabang Surakarta.</p>
+
+        <p>Di komunitas pastoran juga tinggal Frater Vincentius Haryanto, SJ yang tugas pokoknya sebagai pendamping sementara para mahasiswa di Wisma Mahasiswa Surakarta; Romo Paulus Suradibrata, SJ sebagai pembimbing rohani bagi umat (wafat tanggal 1 Januari 2018 masih sebagai penghuni resmi Pastoran Purbayan); dan Romo Agustinus Mangunharjana, SJ sebagai Vikaris Parokial.</p>
+
+        <p>Tanggal 1 Januari 2012, Romo Albertus Mardi Santosa, SJ datang dari Nabire untuk menjadi Pastor Kepala Paroki. Pada bulan Juli 2014, Romo Eduardus Didik Cahyono, SJ datang sebagai Vikaris Parokial, namun pada bulan Agustus 2016 beliau dipindah menjadi pastor kepala di Paroki Bongsari Semarang.</p>
+
+        <p>Romo Heribertus Heri Setyawan, SJ tinggal sementara (Januari sampai September 2016) di Purbayan untuk mempersiapkan studi Islamologi di Kairo, Mesir. Romo Vincentius Ernest Justin, SJ ditugaskan menjadi Vikaris Parokial sejak 28 Juli 2016.</p>
+
+        <p>Romo Clemens Budiarta, SJ ditugaskan menjadi Vikaris Parokial sejak 5 Januari 2018 menggantikan Romo Paulus Suradibrata, SJ.</p>
+
+        <p>Tanggal 23 Agustus 2018, Romo Stephanus Bagus Aris Rudiyanto, SJ menggantikan Romo Albertus Mardi Santosa, SJ sebagai Pastor Paroki. Romo Fransiskus Kristino Mari Asisi, SJ ditugaskan sebagai Vikaris Parokial pada tanggal 1 September 2019 menggantikan Romo Vincentius Ernest Justin, SJ.</p>
+
+        <div class="chapter-highlight">
+          <p>Pada tanggal 1 Oktober 2020, Romo Stephanus Bagus Aris Rudiyanto, SJ wafat karena sakit pada usia 40 tahun. Kepergiannya meninggalkan duka yang mendalam bagi seluruh umat Paroki Purbayan.</p>
+        </div>
+
+        <p>Romo Clemens Budiarta, SJ ditugaskan sebagai Administrator sampai dengan 30 November 2020. Pada tanggal 1 Desember 2020, beliau ditugaskan sebagai Pastor Paroki hingga September 2024.</p>
+
+        <p>Romo Walterus Teguh Santosa yang pindah ke Purbayan mulai 19 Agustus 2024 menjadi Kepala Paroki sejak tahun 2025 hingga sekarang. Di tahun 2024, Romo Fransiskus Kristino Mari Asisi, SJ dipindahtugaskan dan digantikan oleh Romo Antonius Bagas Prasetya Nugroho, SJ yang memasuki Purbayan pada 2024 hingga sekarang.</p>
+
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 5 — MILESTONE TIMELINE
+═══════════════════════════════════════════════════════════ -->
+<section class="section-milestone">
+  <span class="section-label">Tonggak Sejarah</span>
+  <h2 class="section-title" style="color:var(--primary)">Perjalanan Waktu</h2>
+  <div style="overflow-x:auto">
+    <div class="milestone-track">
+      <div class="milestone-item">
+        <div class="milestone-dot-wrap"><div class="milestone-dot"><div class="milestone-dot-inner"></div></div></div>
+        <span class="milestone-year">1905</span>
+        <span class="milestone-label">Perintisan Gereja oleh Rm. Stiphout, SJ</span>
+      </div>
+      <div class="milestone-item">
+        <div class="milestone-dot-wrap"><div class="milestone-dot"><div class="milestone-dot-inner"></div></div></div>
+        <span class="milestone-year">1916</span>
+        <span class="milestone-label">Pemberkatan Gereja Santo Antonius Purbayan</span>
+      </div>
+      <div class="milestone-item">
+        <div class="milestone-dot-wrap"><div class="milestone-dot"><div class="milestone-dot-inner"></div></div></div>
+        <span class="milestone-year">1942</span>
+        <span class="milestone-label">Paroki Purwosari Berdiri Mandiri</span>
+      </div>
+      <div class="milestone-item">
+        <div class="milestone-dot-wrap"><div class="milestone-dot"><div class="milestone-dot-inner"></div></div></div>
+        <span class="milestone-year">1967</span>
+        <span class="milestone-label">Pesta Emas 50 Tahun Paroki</span>
+      </div>
+      <div class="milestone-item">
+        <div class="milestone-dot-wrap"><div class="milestone-dot"><div class="milestone-dot-inner"></div></div></div>
+        <span class="milestone-year">1988</span>
+        <span class="milestone-label">Tahbisan Imam Yesuit, Jenderal Kolvenbach</span>
+      </div>
+      <div class="milestone-item">
+        <div class="milestone-dot-wrap"><div class="milestone-dot"><div class="milestone-dot-inner"></div></div></div>
+        <span class="milestone-year">1991</span>
+        <span class="milestone-label">Perayaan 75 Tahun Paroki</span>
+      </div>
+      <div class="milestone-item">
+        <div class="milestone-dot-wrap"><div class="milestone-dot"><div class="milestone-dot-inner"></div></div></div>
+        <span class="milestone-year">2025</span>
+        <span class="milestone-label">Kepemimpinan Rm. Walterus Teguh Santosa</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 6 — LEGACY
+═══════════════════════════════════════════════════════════ -->
+<section class="section-legacy">
+  <span class="section-label" style="color:var(--gold-light)">Warisan Iman</span>
+  <h2 class="section-title">Paroki dalam Angka</h2>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <span class="stat-value">1905</span>
+      <span class="stat-label">Tahun Perintisan Gereja</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value">1916</span>
+      <span class="stat-label">Tahun Pemberkatan Gereja</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value">100+</span>
+      <span class="stat-label">Tahun Pelayanan Berkesinambungan</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value">4.083</span>
+      <span class="stat-label">Jumlah Umat Paroki</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value">17</span>
+      <span class="stat-label">Wilayah dalam Paroki</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value">55</span>
+      <span class="stat-label">Lingkungan dalam Paroki</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 7 — QUOTE
+═══════════════════════════════════════════════════════════ -->
+<section class="section-quote">
+  <div class="quote-inner">
+    <span class="quote-mark">"</span>
+    <p class="quote-text">Perjalanan Gereja Santo Antonius Padua Purbayan adalah warisan iman yang dibangun oleh para perintis, diteruskan oleh para gembala, dan dihidupi oleh umat dari generasi ke generasi.</p>
+    <span class="quote-attr">Paroki St. Antonius Padua Purbayan · Surakarta</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 8 — FOOTER
+═══════════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">Paroki St. Antonius Padua<br>Purbayan Surakarta</div>
+      <p class="footer-desc">Gereja Katolik yang telah melayani umat di Surakarta selama lebih dari satu abad. Berakar dalam iman, bertumbuh dalam kasih, dan berbuah dalam pelayanan.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Navigasi</div>
+      <ul>
+        <li><a href="#">Beranda</a></li>
+        <li><a href="#">Sejarah Gereja</a></li>
+        <li><a href="#">Kegiatan Paroki</a></li>
+        <li><a href="#">Sakramen</a></li>
+        <li><a href="#">Kontak</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Kontak</div>
+      <ul>
+        <li><a href="#">Jl. Raya Purbayan, Surakarta</a></li>
+        <li><a href="#">Jawa Tengah, Indonesia</a></li>
+        <li><a href="#">paroki@purbayan.org</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 Paroki St. Antonius Padua Purbayan Surakarta. Semua hak dilindungi.</span>
+    <span class="footer-copy">Ad Maiorem Dei Gloriam</span>
+  </div>
+</footer>
+
+<script>
+  function scrollTo(id, el) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.querySelectorAll('.timeline-nav-item').forEach(i => i.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  // Intersection observer for active nav item
+  const chapters = document.querySelectorAll('.chapter');
+  const navItems = document.querySelectorAll('.timeline-nav-item');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        const idx = ['ch1','ch2','ch3','ch4','ch5','ch6'].indexOf(id);
+        navItems.forEach(n => n.classList.remove('active'));
+        if (idx >= 0 && navItems[idx]) navItems[idx].classList.add('active');
+      }
+    });
+  }, { threshold: 0.2, rootMargin: '-10% 0px -60% 0px' });
+
+  chapters.forEach(c => observer.observe(c));
+</script>
+</body>
+</html>
